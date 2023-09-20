@@ -20,48 +20,35 @@ class _SliableScreenState extends State<SliableScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
-        child: CarouselSlider(
-          items: itemSlider
-              .map((item) => Container(
-                    width: double.infinity,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      border: Border.all(),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        item['image_path'],
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                      ),
-                    ),
-                  ))
-              .toList(),
-          carouselController: carouselController,
-          options: CarouselOptions(
-            scrollPhysics: const BouncingScrollPhysics(),
-            autoPlay: true,
-            enlargeCenterPage: true,
-            viewportFraction: 0.9,
-            aspectRatio: 2.0,
-            initialPage: 2,
-            onPageChanged: (index, reason) {
-              setState(() {
-                currentIndex = index;
-              });
-            },
-          ),
+    return Stack(
+      children: [
+      CarouselSlider(
+        items: itemSlider
+            .map((item) => Image.asset(
+              item['image_path'],
+              fit: BoxFit.cover,
+              width: double.infinity,
+            ))
+            .toList(),
+        carouselController: carouselController,
+        options: CarouselOptions(
+          scrollPhysics: const BouncingScrollPhysics(),
+          autoPlay: true,
+          enlargeCenterPage: true,
+          viewportFraction: 1,
+          aspectRatio:1.0,
+          initialPage: 2,
+          onPageChanged: (index, reason) {
+            setState(() {
+              currentIndex = index;
+            });
+          },
         ),
       ),
       Positioned(
         left: 0,
         right: 0,
-        bottom: -4,
+        bottom: 10,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: itemSlider.asMap().entries.map((item) {

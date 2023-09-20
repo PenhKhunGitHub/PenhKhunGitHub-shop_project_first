@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
-import 'package:shop_project/view/body/sliable_screen.dart';
-import 'package:shop_project/view/body/specail_product_screen.dart';
-import 'package:shop_project/view/body/type_product_screen.dart';
+import 'package:shop_project/view/body/bestsellers.dart';
+import 'package:shop_project/view/body/brands.dart';
+import 'package:shop_project/view/body/sliable.dart';
+import 'package:shop_project/view/body/feature_product.dart';
+import 'package:shop_project/view/body/category.dart';
+import 'package:shop_project/view/drawer/body_drawer.dart';
+import 'package:shop_project/view/drawer/header_drawer.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -15,7 +19,17 @@ class _HomePageScreenState extends State<HomePageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFEDECF2),
-      drawer: const Drawer(),
+      drawer: const Drawer(
+        backgroundColor: Colors.white,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              HeaderDrawer(),
+              BodyDrawer()
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
         //Backgound App Bar
         backgroundColor: const Color.fromARGB(255, 160, 202, 161),
@@ -86,7 +100,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   elevation: 0,
                 ),
                 child: const Icon(
-                  Icons.shopping_cart,
+                  Icons.shopping_cart_rounded,
                   size: 30,
                   color: Colors.white,
                 )),
@@ -115,46 +129,50 @@ class _HomePageScreenState extends State<HomePageScreen> {
             ),
             //Sliable Images
             const SliableScreen(),
-            //Type Product
-            const TypeProductScreen(),
-            //Specail Products
-            const SpecailProductScreen()
+            //Category
+            const Categories(),
+            //Brands Product
+            const Brands(),
+            //Feature Products
+            const FeaturedProduct(),
+            // BestSellers
+            const BestSellers()
           ],
         ),
       ),
       bottomNavigationBar: Container(
-        height: 80,
+        height: 75,
         width: double.infinity,
         color: Colors.blue,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 25,bottom: 30),
+              padding: const EdgeInsets.only(left: 25,bottom: 25),
               child: IconButton(
                 onPressed: (){}, 
-                icon: Icon(Icons.home,size: 30,color: Colors.white,)
+                icon: const Icon(Icons.home,size: 30,color: Colors.white,)
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10,bottom: 30),
+              padding: const EdgeInsets.only(left: 10,bottom: 25),
               child: IconButton(
                 onPressed: (){}, 
-                icon: Icon(Icons.menu,size: 30,color: Colors.white,)
+                icon: const Icon(Icons.menu,size: 30,color: Colors.white,)
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10,bottom: 30),
+              padding: const EdgeInsets.only(left: 10,bottom: 25),
               child: IconButton(
                 onPressed: (){}, 
-                icon: Icon(Icons.adf_scanner_rounded,size: 30,color: Colors.white,)
+                icon: const Icon(Icons.adf_scanner_rounded,size: 30,color: Colors.white,)
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 10,bottom: 30,right: 25),
+              padding: const EdgeInsets.only(left: 10,bottom: 25,right: 25),
               child: IconButton(
                 onPressed: (){}, 
-                icon: Icon(Icons.person,size: 30,color: Colors.white,)
+                icon: const Icon(Icons.person,size: 30,color: Colors.white,)
               ),
             ),
           ],

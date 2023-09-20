@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_project/view/body/home_page_screen.dart';
 import 'package:shop_project/view/detail/category_type_product.dart';
-import 'package:shop_project/view/detail/detail_product.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const DetailProduct(),
+      home: const HomePageScreen()
     );
   }
 }

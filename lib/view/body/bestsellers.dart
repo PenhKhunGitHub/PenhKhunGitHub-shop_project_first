@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class SpecailProductScreen extends StatefulWidget {
-  const SpecailProductScreen({super.key});
+class BestSellers extends StatefulWidget {
+  const BestSellers({super.key});
 
   @override
-  State<SpecailProductScreen> createState() => _SpecailProductScreenState();
+  State<BestSellers> createState() => _SpecailProductScreenState();
 }
 
-class _SpecailProductScreenState extends State<SpecailProductScreen> {
+class _SpecailProductScreenState extends State<BestSellers> {
   List<String> list = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",

@@ -1,8 +1,5 @@
-import 'dart:math';
 
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -106,7 +103,8 @@ class _DetailProductState extends State<DetailProduct> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Sliable Product
-              Stack(children: [
+              Stack(
+                children: [
                 CarouselSlider(
                   items: itemSlider
                       .map((item) => Image.asset(
@@ -169,8 +167,7 @@ class _DetailProductState extends State<DetailProduct> {
               ),
               //Star And Check
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                padding:const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: Row(
                   children: [
                     Expanded(
@@ -222,7 +219,7 @@ class _DetailProductState extends State<DetailProduct> {
               //Quantity Product
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 3),
+                const EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                 child: Row(
                   children: [
                     Column(
@@ -440,39 +437,50 @@ class _DetailProductState extends State<DetailProduct> {
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-                child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                child: SizedBox(
                   height: 50,
-                  width: 200,
-                  decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 244, 233, 233),
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: SizedBox(
-                        height: 50,
-                        child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 1,
-                            itemBuilder: (context, index) => const Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 8, vertical: 5),
-                                  child: Text(
-                                    'werersafsagfdsfsfsfsf',
-                                    style: TextStyle(fontSize: 23),
-                                  ),
-                                ))),
+                  width: 310,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 1,
+                    itemBuilder: (context, index) => Row(
+                      children: [
+                        const SizedBox(width: 10,),
+                        Container(
+                          height: 50,
+                          width: 300,
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 244, 233, 233),
+                            borderRadius: BorderRadius.circular(15)
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                            child: Text(
+                              'Siang Pure Euw Balm and Oil',
+                              style: TextStyle(fontSize: 20),
+                              ),
+                            ),
+                          ),
+                        const SizedBox(width: 10,)
+                      ],
+                    ),
                   ),
                 ),
               ),
               const SizedBox(
-                height: 20,
-              )
+                height: 10,
+              ),
+              const Divider(
+                color: Color.fromARGB(255, 229, 223, 223),
+                height: 5,
+                thickness: 1,
+                indent: 15,
+              ),
             ],
           ),
         ),
-        
+
         bottomNavigationBar: SizedBox(
           height: 174,
           width: double.infinity,
@@ -509,17 +517,17 @@ class _DetailProductState extends State<DetailProduct> {
                             child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Icon(
-                                  Icons.add,
-                                  size: 25,
-                                  color: Colors.white,
-                                ),
                                 Padding(
-                                  padding: EdgeInsets.only(left: 3),
-                                  child: Text(
-                                    'ដាក់ចូលបញ្ជីទិញ',
-                                    style: TextStyle(fontSize: 18,color: Colors.white),
+                                  padding: EdgeInsets.only(right: 3,bottom: 1),
+                                  child: Icon(
+                                    Icons.add,
+                                    size: 25,
+                                    color: Colors.white,
                                   ),
+                                ),
+                                Text(
+                                  'ដាក់ចូលកន្ត្រក',
+                                  style: TextStyle(fontSize: 18,color: Colors.white),
                                 ),
                               ],
                             ),
@@ -533,7 +541,7 @@ class _DetailProductState extends State<DetailProduct> {
                           child: Container(
                             height: 50,
                             decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 72, 70, 70),
+                              color: Color.fromARGB(255, 159, 186, 159),
                               borderRadius: BorderRadius.only(
                                 topRight: Radius.circular(10)
                               )
@@ -541,17 +549,17 @@ class _DetailProductState extends State<DetailProduct> {
                             child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Icon(
-                                  Icons.add,
-                                  size: 25,
-                                  color: Colors.white,
-                                ),
                                 Padding(
-                                  padding: EdgeInsets.only(left: 3),
-                                  child: Text(
-                                    'ដាក់ចូលបញ្ជីទិញ',
-                                    style: TextStyle(fontSize: 18,color: Colors.white),
+                                  padding: EdgeInsets.only(bottom: 3,right: 3),
+                                  child: Icon(
+                                    Icons.shopping_bag_outlined,
+                                    size: 25,
+                                    color: Colors.white,
                                   ),
+                                ),
+                                Text(
+                                  'ទិញឥឡូវនេះ',
+                                  style: TextStyle(fontSize: 18,color: Colors.white),
                                 ),
                               ],
                             ),
@@ -574,7 +582,7 @@ class _DetailProductState extends State<DetailProduct> {
                       Icon(
                         Icons.favorite,
                         size: 18,
-                        color: Colors.red,
+                        //color: Colors.red,
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 5),
