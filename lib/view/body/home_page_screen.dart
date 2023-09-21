@@ -18,7 +18,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFEDECF2),
+      backgroundColor: Colors.white,//const Color(0xFFEDECF2),
       drawer: const Drawer(
         backgroundColor: Colors.white,
         child: SingleChildScrollView(
