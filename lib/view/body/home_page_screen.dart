@@ -18,15 +18,12 @@ class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,//const Color(0xFFEDECF2),
+      backgroundColor: Colors.white, //const Color(0xFFEDECF2),
       drawer: const Drawer(
         backgroundColor: Colors.white,
         child: SingleChildScrollView(
           child: Column(
-            children: [
-              HeaderDrawer(),
-              BodyDrawer()
-            ],
+            children: [HeaderDrawer(), BodyDrawer()],
           ),
         ),
       ),
@@ -34,7 +31,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
         //Backgound App Bar
         backgroundColor: const Color.fromARGB(255, 160, 202, 161),
         // Title Image App Bar
-        title: const Text('Shop App',style: TextStyle(color: Colors.purple),),
+        title: const Text(
+          'Shop App',
+          style: TextStyle(color: Colors.purple),
+        ),
         centerTitle: true,
         // Button Setting
         leading: Builder(
@@ -46,9 +46,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                   Icons.settings_outlined,
                   size: 30,
                   color: Colors.white,
-                )
-              )
-          ),
+                ))),
         //Badges Favorite & Shopping card
         actions: [
           //Badges Favorite
@@ -140,44 +138,90 @@ class _HomePageScreenState extends State<HomePageScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 75,
-        width: double.infinity,
-        color: Colors.blue,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 25,bottom: 25),
-              child: IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.home,size: 30,color: Colors.white,)
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10,bottom: 25),
-              child: IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.menu,size: 30,color: Colors.white,)
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10,bottom: 25),
-              child: IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.adf_scanner_rounded,size: 30,color: Colors.white,)
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10,bottom: 25,right: 25),
-              child: IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.person,size: 30,color: Colors.white,)
-              ),
-            ),
-          ],
-        ),
-      )
     );
   }
+
+  // int selectIndex = 1;
+  // Widget home(int id) {
+  //   return Padding(
+  //     padding: const EdgeInsets.only(left: 25, bottom: 25),
+  //     child: IconButton(
+  //         onPressed: () {
+  //           if (id == 1) {
+  //             const HomePageScreen();
+  //           }
+  //           setState(() {
+  //             selectIndex = id;
+  //           });
+  //         },
+  //         icon: Icon(
+  //           Icons.home,
+  //           size: 30,
+  //           color: selectIndex == id ?Color.fromARGB(255, 171, 167, 167):Colors.white,
+  //         )),
+  //   );
+  // }
+
+  // Widget list(int id) {
+  //   return Padding(
+  //     padding: const EdgeInsets.only(left: 10, bottom: 25),
+  //     child: IconButton(
+  //         onPressed: () {
+  //           if (id == 2) {
+  //             Navigator.of(context).push(MaterialPageRoute(
+  //                 builder: (context) => const CategoryTypeProducts()));
+  //           }
+  //           setState(() {
+  //             selectIndex = id;
+  //           });
+  //         },
+  //         icon: Icon(
+  //           Icons.list_outlined,
+  //           size: 30,
+  //           color: selectIndex == id ?Color.fromARGB(255, 171, 167, 167):Colors.white,
+  //         )),
+  //   );
+  // }
+
+  // Widget scanner(int id) {
+  //   return Padding(
+  //     padding: const EdgeInsets.only(left: 10, bottom: 25),
+  //     child: IconButton(
+  //         onPressed: () {
+  //           if (id == 3) {
+  //             Navigator.of(context).push(MaterialPageRoute(
+  //                 builder: (context) => const CategoryTypeProducts()));
+  //           }
+  //           setState(() {
+  //             selectIndex = id;
+  //           });
+  //         },
+  //         icon: Icon(
+  //           Icons.adf_scanner_rounded,
+  //           size: 30,
+  //           color: selectIndex == id ?Color.fromARGB(255, 171, 167, 167):Colors.white,
+  //         )),
+  //   );
+  // }
+
+  // Widget person(int id) {
+  //   return Padding(
+  //     padding: const EdgeInsets.only(left: 10, bottom: 25, right: 25),
+  //     child: IconButton(
+  //         onPressed: () {
+  //           if (id == 4) {
+  //             Navigator.of(context).push(MaterialPageRoute(
+  //                 builder: (context) => const AccountScreen()));
+  //           }
+  //           setState(() {
+  //             selectIndex = id;
+  //           });
+  //         },
+  //         icon: Icon(
+  //           Icons.person,
+  //           size: 30,
+  //           color: selectIndex == id ?Color.fromARGB(255, 171, 167, 167):Colors.white,
+  //         )),
+  //   );
+  // }
 }

@@ -1,4 +1,3 @@
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
@@ -27,20 +26,25 @@ class _DetailProductState extends State<DetailProduct> {
           title: const Text('Detail Product'),
           centerTitle: true,
           leadingWidth: 90,
-          leading: const Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  size: 25,
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: const Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 8),
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    size: 25,
+                  ),
                 ),
-              ),
-              Text(
-                'Back',
-                style: TextStyle(fontSize: 20),
-              )
-            ],
+                Text(
+                  'Back',
+                  style: TextStyle(fontSize: 20),
+                )
+              ],
+            ),
           ),
           actions: [
             Padding(
@@ -103,8 +107,7 @@ class _DetailProductState extends State<DetailProduct> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Sliable Product
-              Stack(
-                children: [
+              Stack(children: [
                 CarouselSlider(
                   items: itemSlider
                       .map((item) => Image.asset(
@@ -167,7 +170,8 @@ class _DetailProductState extends State<DetailProduct> {
               ),
               //Star And Check
               Padding(
-                padding:const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: Row(
                   children: [
                     Expanded(
@@ -219,7 +223,7 @@ class _DetailProductState extends State<DetailProduct> {
               //Quantity Product
               Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 15, vertical: 3),
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                 child: Row(
                   children: [
                     Column(
@@ -437,7 +441,8 @@ class _DetailProductState extends State<DetailProduct> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
                 child: SizedBox(
                   height: 50,
                   width: 310,
@@ -446,23 +451,27 @@ class _DetailProductState extends State<DetailProduct> {
                     itemCount: 1,
                     itemBuilder: (context, index) => Row(
                       children: [
-                        const SizedBox(width: 10,),
+                        const SizedBox(
+                          width: 10,
+                        ),
                         Container(
                           height: 50,
                           width: 300,
                           decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 244, 233, 233),
-                            borderRadius: BorderRadius.circular(15)
-                          ),
+                              color: const Color.fromARGB(255, 244, 233, 233),
+                              borderRadius: BorderRadius.circular(15)),
                           child: const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 8),
                             child: Text(
                               'Siang Pure Euw Balm and Oil',
                               style: TextStyle(fontSize: 20),
-                              ),
                             ),
                           ),
-                        const SizedBox(width: 10,)
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        )
                       ],
                     ),
                   ),
@@ -480,92 +489,88 @@ class _DetailProductState extends State<DetailProduct> {
             ],
           ),
         ),
-
         bottomNavigationBar: SizedBox(
           height: 174,
           width: double.infinity,
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 1,right: 1),
+                padding: const EdgeInsets.only(left: 1, right: 1),
                 child: Container(
                   height: 50,
                   width: double.infinity,
                   //color: const Color.fromARGB(255, 244, 234, 234),
                   decoration: const BoxDecoration(
-                    //color: Colors.black,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(5),
-                      topRight: Radius.circular(5)
-                    )
-                  ),
+                      //color: Colors.black,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(5),
+                          topRight: Radius.circular(5))),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Expanded(
-                        flex: 1,
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 1),
-                          child: Container(
-                            height: 50,
-                            decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 72, 70, 70),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                              )
-                            ),
-                            child: const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(right: 3,bottom: 1),
-                                  child: Icon(
-                                    Icons.add,
-                                    size: 25,
-                                    color: Colors.white,
+                          flex: 1,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 1),
+                            child: Container(
+                              height: 50,
+                              decoration: const BoxDecoration(
+                                  color: Color.fromARGB(255, 72, 70, 70),
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                  )),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(right: 3, bottom: 1),
+                                    child: Icon(
+                                      Icons.add,
+                                      size: 25,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  'ដាក់ចូលកន្ត្រក',
-                                  style: TextStyle(fontSize: 18,color: Colors.white),
-                                ),
-                              ],
+                                  Text(
+                                    'ដាក់ចូលកន្ត្រក',
+                                    style: TextStyle(
+                                        fontSize: 18, color: Colors.white),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        )
-                      ),
+                          )),
                       Expanded(
-                        flex: 1,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 1),
-                          child: Container(
-                            height: 50,
-                            decoration: const BoxDecoration(
-                              color: Color.fromARGB(255, 159, 186, 159),
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(10)
-                              )
-                            ),
-                            child: const Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(bottom: 3,right: 3),
-                                  child: Icon(
-                                    Icons.shopping_bag_outlined,
-                                    size: 25,
-                                    color: Colors.white,
+                          flex: 1,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 1),
+                            child: Container(
+                              height: 50,
+                              decoration: const BoxDecoration(
+                                  color: Color.fromARGB(255, 159, 186, 159),
+                                  borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(10))),
+                              child: const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(bottom: 3, right: 3),
+                                    child: Icon(
+                                      Icons.shopping_bag_outlined,
+                                      size: 25,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  'ទិញឥឡូវនេះ',
-                                  style: TextStyle(fontSize: 18,color: Colors.white),
-                                ),
-                              ],
+                                  Text(
+                                    'ទិញឥឡូវនេះ',
+                                    style: TextStyle(
+                                        fontSize: 18, color: Colors.white),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        )
-                      ),
+                          )),
                     ],
                   ),
                 ),
@@ -609,9 +614,8 @@ class _DetailProductState extends State<DetailProduct> {
                                 Icons.home,
                                 size: 30,
                                 color: Colors.white,
-                              )
-                            ),
-                          ),
+                              )),
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(left: 10, bottom: 25),
                           child: IconButton(
@@ -620,8 +624,7 @@ class _DetailProductState extends State<DetailProduct> {
                                 Icons.menu,
                                 size: 30,
                                 color: Colors.white,
-                              )
-                          ),
+                              )),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 10, bottom: 25),
@@ -634,15 +637,15 @@ class _DetailProductState extends State<DetailProduct> {
                               )),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 10, bottom: 25, right: 30),
+                          padding: const EdgeInsets.only(
+                              left: 10, bottom: 25, right: 30),
                           child: IconButton(
                               onPressed: () {},
                               icon: const Icon(
                                 Icons.person,
                                 size: 30,
                                 color: Colors.white,
-                              )
-                            ),
+                              )),
                         ),
                       ],
                     ),

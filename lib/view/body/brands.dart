@@ -5,10 +5,10 @@ class Brands extends StatefulWidget {
   const Brands({super.key});
 
   @override
-  State<Brands> createState() => _TypeProductScreenState();
+  State<Brands> createState() => BrandsState();
 }
 
-class _TypeProductScreenState extends State<Brands> {
+class BrandsState extends State<Brands> {
   List<String> list = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",

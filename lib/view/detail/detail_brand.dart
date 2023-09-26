@@ -6,10 +6,10 @@ class BrandDetail extends StatefulWidget {
   const BrandDetail({super.key});
 
   @override
-  State<BrandDetail> createState() => _CategoryDetailState();
+  State<BrandDetail> createState() => _BrandDetailState();
 }
 
-class _CategoryDetailState extends State<BrandDetail> {
+class _BrandDetailState extends State<BrandDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,8 +145,7 @@ class _CategoryDetailState extends State<BrandDetail> {
                             itemCount: 5,
                             itemSize: 15,
                             ignoreGestures: true,
-                            itemPadding:
-                                const EdgeInsets.only(right: 3),
+                            itemPadding:const EdgeInsets.only(right: 3),
                             itemBuilder: (context, _) => const Icon(
                               Icons.star,
                             ),

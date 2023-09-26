@@ -218,44 +218,6 @@ class _CategoryDetailState extends State<CategoryDetail> {
             ),
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 75,
-        width: double.infinity,
-        color: Colors.blue,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 25,bottom: 25),
-              child: IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.home,size: 30,color: Colors.white,)
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10,bottom: 25),
-              child: IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.menu,size: 30,color: Colors.white,)
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10,bottom: 25),
-              child: IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.adf_scanner_rounded,size: 30,color: Colors.white,)
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 10,bottom: 25,right: 25),
-              child: IconButton(
-                onPressed: (){}, 
-                icon: const Icon(Icons.person,size: 30,color: Colors.white,)
-              ),
-            ),
-          ],
-        ),
-      )
     );
   }
 }
