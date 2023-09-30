@@ -13,7 +13,7 @@ class _AboutScreenState extends State<FAQScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 160, 202, 161),
         title: const Text(
           'FAQ',
           style: TextStyle(color: Colors.white),

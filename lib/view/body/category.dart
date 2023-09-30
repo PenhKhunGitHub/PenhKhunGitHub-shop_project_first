@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_project/view/detail/bottom_navigation_bar.dart';
 import 'package:shop_project/view/detail/detail_category.dart';
 
 class Categories extends StatefulWidget {
@@ -25,7 +24,7 @@ class CategoriesState extends State<Categories> {
           const Row(
             children: [
               Text(
-                'ប្រភេទទំនិញ',
+                'CATEGORIES',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               )
             ],
@@ -36,20 +35,19 @@ class CategoriesState extends State<Categories> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context)=> CategoryDetail(),
+                    builder: (context)=> const CategoryDetail(),
                   )
                 );
               },
-              child: SizedBox(
-                  height: 220,
-                  //color: Colors.grey,
-                  child: Scrollbar(
+              child: Scrollbar(
+                child: SizedBox(
+                    height: 220,
+                    //color: Colors.grey,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: list.length,
                         itemBuilder: (context, index) => Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 5),
+                              padding: const EdgeInsets.symmetric(horizontal: 5),
                               child: Column(
                                 //crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -82,8 +80,10 @@ class CategoriesState extends State<Categories> {
                                   ),
                                 ],
                               ),
-                            )),
-                  )),
+                            )
+                          )
+                      ),
+              ),
             ),
           ),
         ],

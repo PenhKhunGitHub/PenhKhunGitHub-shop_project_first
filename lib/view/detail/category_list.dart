@@ -13,8 +13,8 @@ class _CategoryListState extends State<CategoryList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('Category'),
+        backgroundColor: const Color.fromARGB(255, 160, 202, 161),
+        title: const Text('Category',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
         centerTitle: true,
         leadingWidth: 90,
         leading: GestureDetector(
@@ -28,11 +28,12 @@ class _CategoryListState extends State<CategoryList> {
                 child: Icon(
                   Icons.arrow_back_ios,
                   size: 25,
+                  color: Colors.white,
                 ),
               ),
               Text(
                 'Back',
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20,color: Colors.white),
               )
             ],
           ),

@@ -5,6 +5,7 @@ import 'package:shop_project/view/body/brands.dart';
 import 'package:shop_project/view/body/sliable.dart';
 import 'package:shop_project/view/body/feature_product.dart';
 import 'package:shop_project/view/body/category.dart';
+import 'package:shop_project/view/detail/shopping_cart.dart';
 import 'package:shop_project/view/drawer/body_drawer.dart';
 import 'package:shop_project/view/drawer/header_drawer.dart';
 
@@ -79,149 +80,77 @@ class _HomePageScreenState extends State<HomePageScreen> {
           //Badges Shopping Card
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: badges.Badge(
-                position: badges.BadgePosition.topEnd(
-                  top: -10,
-                  end: -8,
-                ),
-                showBadge: true,
-                ignorePointer: false,
-                onTap: () {},
-                badgeContent: const Text(
-                  '1',
-                  style: TextStyle(fontSize: 10, color: Colors.white),
-                ),
-                badgeStyle: badges.BadgeStyle(
-                  badgeColor: Colors.blue,
-                  padding: const EdgeInsets.all(5),
-                  borderRadius: BorderRadius.circular(20),
-                  elevation: 0,
-                ),
-                child: const Icon(
-                  Icons.shopping_cart_rounded,
-                  size: 30,
-                  color: Colors.white,
-                )),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context)=>const ShoppingCartScreen())
+                );
+              },
+              child: badges.Badge(
+                  position: badges.BadgePosition.topEnd(
+                    top: -10,
+                    end: -8,
+                  ),
+                  showBadge: true,
+                  ignorePointer: false,
+                  onTap: () {},
+                  badgeContent: const Text(
+                    '1',
+                    style: TextStyle(fontSize: 10, color: Colors.white),
+                  ),
+                  badgeStyle: badges.BadgeStyle(
+                    badgeColor: Colors.blue,
+                    padding: const EdgeInsets.all(5),
+                    borderRadius: BorderRadius.circular(20),
+                    elevation: 0,
+                  ),
+                  child: const Icon(
+                    Icons.shopping_cart_rounded,
+                    size: 30,
+                    color: Colors.white,
+                  )),
+            ),
           ),
         ],
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // Text Formfile Search
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-              child: SizedBox(
-                height: 60,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14)),
-                      hintText: 'Search...',
-                      prefixIcon: const Icon(
-                        Icons.search_outlined,
-                        size: 30,
-                      )),
+        bottom: PreferredSize(
+          preferredSize:  const Size.fromHeight(50.0), 
+          child:  Padding(
+              padding: const EdgeInsets.only(left: 20,right: 20,bottom: 5),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  fillColor: Colors.white,
+                  filled: true,
+                  contentPadding: const EdgeInsets.all(8.0),
+                  border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20)),
+                  hintText: 'Search...',
+                  hintStyle: const TextStyle(fontSize: 20),
+                  prefixIcon: const Icon(
+                  Icons.search_outlined,
+                  size: 30,
+                  )
                 ),
               ),
             ),
+        ),
+      ),
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [      
             //Sliable Images
-            const SliableScreen(),
+            SliableScreen(),
             //Category
-            const Categories(),
+            Categories(),
             //Brands Product
-            const Brands(),
+            Brands(),
             //Feature Products
-            const FeaturedProduct(),
+            FeaturedProduct(),
             // BestSellers
-            const BestSellers()
+            BestSellers()
           ],
         ),
       ),
     );
   }
-
-  // int selectIndex = 1;
-  // Widget home(int id) {
-  //   return Padding(
-  //     padding: const EdgeInsets.only(left: 25, bottom: 25),
-  //     child: IconButton(
-  //         onPressed: () {
-  //           if (id == 1) {
-  //             const HomePageScreen();
-  //           }
-  //           setState(() {
-  //             selectIndex = id;
-  //           });
-  //         },
-  //         icon: Icon(
-  //           Icons.home,
-  //           size: 30,
-  //           color: selectIndex == id ?Color.fromARGB(255, 171, 167, 167):Colors.white,
-  //         )),
-  //   );
-  // }
-
-  // Widget list(int id) {
-  //   return Padding(
-  //     padding: const EdgeInsets.only(left: 10, bottom: 25),
-  //     child: IconButton(
-  //         onPressed: () {
-  //           if (id == 2) {
-  //             Navigator.of(context).push(MaterialPageRoute(
-  //                 builder: (context) => const CategoryTypeProducts()));
-  //           }
-  //           setState(() {
-  //             selectIndex = id;
-  //           });
-  //         },
-  //         icon: Icon(
-  //           Icons.list_outlined,
-  //           size: 30,
-  //           color: selectIndex == id ?Color.fromARGB(255, 171, 167, 167):Colors.white,
-  //         )),
-  //   );
-  // }
-
-  // Widget scanner(int id) {
-  //   return Padding(
-  //     padding: const EdgeInsets.only(left: 10, bottom: 25),
-  //     child: IconButton(
-  //         onPressed: () {
-  //           if (id == 3) {
-  //             Navigator.of(context).push(MaterialPageRoute(
-  //                 builder: (context) => const CategoryTypeProducts()));
-  //           }
-  //           setState(() {
-  //             selectIndex = id;
-  //           });
-  //         },
-  //         icon: Icon(
-  //           Icons.adf_scanner_rounded,
-  //           size: 30,
-  //           color: selectIndex == id ?Color.fromARGB(255, 171, 167, 167):Colors.white,
-  //         )),
-  //   );
-  // }
-
-  // Widget person(int id) {
-  //   return Padding(
-  //     padding: const EdgeInsets.only(left: 10, bottom: 25, right: 25),
-  //     child: IconButton(
-  //         onPressed: () {
-  //           if (id == 4) {
-  //             Navigator.of(context).push(MaterialPageRoute(
-  //                 builder: (context) => const AccountScreen()));
-  //           }
-  //           setState(() {
-  //             selectIndex = id;
-  //           });
-  //         },
-  //         icon: Icon(
-  //           Icons.person,
-  //           size: 30,
-  //           color: selectIndex == id ?Color.fromARGB(255, 171, 167, 167):Colors.white,
-  //         )),
-  //   );
-  // }
 }

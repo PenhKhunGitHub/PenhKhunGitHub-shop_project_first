@@ -13,7 +13,7 @@ class _AboutScreenState extends State<LanguagesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 160, 202, 161),
         title: const Text(
           'Languages',
           style: TextStyle(color: Colors.white),
@@ -97,6 +97,408 @@ class _AboutScreenState extends State<LanguagesScreen> {
           ),
         ],
       ),
+      body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10, top: 5),
+          child: InkWell(
+            onTap: () {
+              opentLanguageDialog();
+            },
+            child: const SizedBox(
+              height: 82,
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    child: Text(
+                      'Language',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                          child: Text(
+                            'English',
+                            style: TextStyle(
+                                fontSize: 24, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(
+                            Icons.arrow_drop_down,
+                            size: 30,
+                            color: Color.fromARGB(255, 211, 208, 208),
+                          ),
+                        ),
+                      ]),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Divider(
+                      color: Colors.grey,
+                      height: 2,
+                      thickness: 1,
+                      //indent: 60,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: InkWell(
+            onTap: () {
+              opentCurrencyDialog();
+            },
+            child: const SizedBox(
+              height: 82,
+              width: double.infinity,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    child: Text(
+                      'Currency',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                          child: Text(
+                            'US Dollar',
+                            style: TextStyle(
+                                fontSize: 24, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(
+                            Icons.arrow_drop_down,
+                            size: 30,
+                            color: Color.fromARGB(255, 211, 208, 208),
+                          ),
+                        ),
+                      ]),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Divider(
+                      color: Colors.grey,
+                      height: 2,
+                      thickness: 1,
+                      //indent: 60,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ]),
     );
+  }
+
+  Future opentLanguageDialog() {
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: const Center(child: Text('Language')),
+              titlePadding: const EdgeInsets.only(bottom: 10,top: 10),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14)),
+              contentPadding: const EdgeInsets.only(top: 5),
+              // ignore: prefer_const_constructors
+              titleTextStyle: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black.withOpacity(0.7)
+              ),
+              content: SizedBox(
+                height: 160,
+                child: Column(
+                  children: [
+                    const Divider(
+                      color: Colors.grey,
+                      height: 2,
+                      thickness: 1,
+                      //indent: 60,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 5),
+                            child: Text(
+                              'ភាសាខ្មែរ',
+                              style: TextStyle(
+                                  fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Icon(
+                              Icons.check,
+                              size: 30,
+                              color: Color.fromARGB(255, 211, 208, 208),
+                            ),
+                          ),
+                        ]),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 5),
+                            child: Text(
+                              'English',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Icon(
+                              Icons.check,
+                              size: 30,
+                              color: Color.fromARGB(255, 211, 208, 208),
+                            ),
+                          ),
+                        ]),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      height: 48,
+                      width: 300,
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(14),
+                              bottomRight: Radius.circular(14)
+                        )
+                      ),
+                      child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
+                                flex: 1,
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Container(
+                                    height: 48,
+                                    width: 150,
+                                    decoration: const BoxDecoration(
+                                        border: Border(
+                                            top: BorderSide(color: Colors.grey),
+                                            right: BorderSide(
+                                                color: Colors.grey))),
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(top: 7),
+                                      child: Text(
+                                        'Cancel',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 18, color: Colors.blue),
+                                      ),
+                                    ),
+                                  ),
+                                )),
+                            Expanded(
+                                flex: 1,
+                                child: Container(
+                                  height: 48,
+                                  width: 150,
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                          top: BorderSide(color: Colors.grey),
+                                          left:
+                                              BorderSide(color: Colors.grey))),
+                                  child: const Padding(
+                                    padding: EdgeInsets.only(top: 7),
+                                    child: Text(
+                                      'OK',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.blue),
+                                    ),
+                                  ),
+                                ))
+                          ]),
+                    )
+                  ],
+                ),
+              ),
+            ));
+  }
+
+  Future opentCurrencyDialog() {
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: const Center(child: Text('Currency')),
+              titlePadding: const EdgeInsets.only(bottom: 10,top: 10),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14)),
+              contentPadding: const EdgeInsets.only(top: 5),
+              // ignore: prefer_const_constructors
+              titleTextStyle: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black.withOpacity(0.7)),
+              content: SizedBox(
+                height: 160,
+                child: Column(
+                  children: [
+                    const Divider(
+                      color: Colors.grey,
+                      height: 2,
+                      thickness: 1,
+                      //indent: 60,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 5),
+                            child: Text(
+                              'US Dollar',
+                              style: TextStyle(
+                                  fontSize: 20
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Icon(
+                              Icons.check,
+                              size: 30,
+                              color: Color.fromARGB(255, 211, 208, 208),
+                            ),
+                          ),
+                        ]),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 5),
+                            child: Text(
+                              'Khmer',
+                              style: TextStyle(
+                                  fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Icon(
+                              Icons.check,
+                              size: 30,
+                              color: Color.fromARGB(255, 211, 208, 208),
+                            ),
+                          ),
+                        ]),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      height: 48,
+                      width: 300,
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(14),
+                              bottomRight: Radius.circular(14))),
+                      child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
+                                flex: 1,
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Container(
+                                    height: 48,
+                                    width: 150,
+                                    decoration: const BoxDecoration(
+                                        border: Border(
+                                            top: BorderSide(color: Colors.grey),
+                                            right: BorderSide(
+                                                color: Colors.grey))),
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(top: 7),
+                                      child: Text(
+                                        'Cancel',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 18, color: Colors.blue),
+                                      ),
+                                    ),
+                                  ),
+                                )),
+                            Expanded(
+                                flex: 1,
+                                child: Container(
+                                  height: 48,
+                                  width: 150,
+                                  decoration: const BoxDecoration(
+                                      border: Border(
+                                          top: BorderSide(color: Colors.grey),
+                                          left:
+                                              BorderSide(color: Colors.grey))),
+                                  child: const Padding(
+                                    padding: EdgeInsets.only(top: 7),
+                                    child: Text(
+                                      'OK',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.blue),
+                                    ),
+                                  ),
+                                ))
+                          ]),
+                    )
+                  ],
+                ),
+              ),
+            ));
   }
 }

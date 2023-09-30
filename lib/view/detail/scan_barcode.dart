@@ -13,8 +13,8 @@ class _ScanbarCodeScreenState extends State<ScanbarCodeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('Scan BarCode'),
+        backgroundColor: const Color.fromARGB(255, 160, 202, 161),
+        title: const Text('Scan BarCode',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
         centerTitle: true,
         leadingWidth: 90,
         leading: GestureDetector(
@@ -28,11 +28,12 @@ class _ScanbarCodeScreenState extends State<ScanbarCodeScreen> {
                 child: Icon(
                   Icons.arrow_back_ios,
                   size: 25,
+                  color: Colors.white,
                 ),
               ),
               Text(
                 'Back',
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20,color: Colors.white),
               )
             ],
           ),
@@ -94,35 +95,45 @@ class _ScanbarCodeScreenState extends State<ScanbarCodeScreen> {
         ],
       ),
       body: Scrollbar(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 815,
-              width: double.infinity,
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                  itemCount: 1,
-                  itemBuilder: (context, index) {
-                    return const Column(
-                      children: [
-                        SizedBox(height: 220,),
-                        SizedBox(
-                          height: 350,
-                          width: double.infinity,
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 3, bottom: 3),
-                            child: Image(
-                                fit: BoxFit.contain,
-                                image: NetworkImage(
-                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpvtuYumHWGsUeyuEuUMAAz2i_P54EVA3ePQ&usqp=CAU')),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 815,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQza-uZpZWa0FmGGllEEs1SMWyw_1PTizHLdQ&usqp=CAU'
+                    )
+                  )
+                ),
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                    itemCount: 1,
+                    itemBuilder: (context, index) {
+                      return const Column(
+                        children: [
+                          SizedBox(height: 220,),
+                          SizedBox(
+                            height: 350,
+                            width: double.infinity,
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 3, bottom: 3),
+                              child: Image(
+                                  fit: BoxFit.contain,
+                                  image: NetworkImage(
+                                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAfm8M8Efgh5lJ09nqaL56T12RbQor7OZwmw&usqp=CAU')),
+                            ),
                           ),
-                        ),
-                      ],
-                    );
-                  }),
-            ),
-          ],
+                        ],
+                      );
+                    }),
+              ),
+            ],
+          ),
         ),
       ),
     );

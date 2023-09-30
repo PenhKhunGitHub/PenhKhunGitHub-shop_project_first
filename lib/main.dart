@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop_project/view/detail/login.dart';
+import 'package:shop_project/view/detail/bottom_navigation_bar.dart';
+import 'package:shop_project/view/detail/shopping_cart.dart';
+import 'package:shop_project/view/drawer/vendor_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +18,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen()
+      home: const BottomBar()
     );
   }
 }

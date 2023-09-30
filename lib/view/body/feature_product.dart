@@ -28,7 +28,7 @@ class FeatureProductState extends State<FeaturedProduct> {
               child: Row(
                 children: [
                   Text(
-                    'ផលិតផលពិសេស',
+                    'FEATURED PRODUCTS',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   )
                 ],

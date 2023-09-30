@@ -11,6 +11,8 @@ class DetailProduct extends StatefulWidget {
 }
 
 class _DetailProductState extends State<DetailProduct> {
+  TextEditingController numberTextController = TextEditingController();
+  int count = 1;
   int currentIndex = 1;
   List itemSlider = [
     {'id': 1, 'image_path': 'images/anima.jpg'},
@@ -22,8 +24,11 @@ class _DetailProductState extends State<DetailProduct> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: const Text('Detail Product'),
+          backgroundColor: const Color.fromARGB(255, 160, 202, 161),
+          title: const Text(
+            'Detail Product',
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+          ),
           centerTitle: true,
           leadingWidth: 90,
           leading: GestureDetector(
@@ -37,11 +42,12 @@ class _DetailProductState extends State<DetailProduct> {
                   child: Icon(
                     Icons.arrow_back_ios,
                     size: 25,
+                    color: Colors.white,
                   ),
                 ),
                 Text(
                   'Back',
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 )
               ],
             ),
@@ -209,9 +215,25 @@ class _DetailProductState extends State<DetailProduct> {
               //Pirce Product
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                child: Text(
-                  '\$ 3.89',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                child: Row(
+                  children: [
+                    Text(
+                      '\$3.99',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        '\$5.00',
+                        style: TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 147, 144, 144)),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const Divider(
@@ -224,75 +246,94 @@ class _DetailProductState extends State<DetailProduct> {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 3),
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              //color: Colors.black,
-                              border: Border.all(color: Colors.black)),
-                          child: const Center(
-                            child: Text(
-                              'បរិមាណ',
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            width: 80,
+                            height: 40,
+                            decoration: BoxDecoration(
+                                //color: Colors.black,
+                                border: Border.all(color: Colors.black)),
+                            child: const Center(
+                              child: Text(
+                                'បរិមាណ',
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: 80,
+                            height: 40,
+                            decoration: BoxDecoration(
+                                //color: Colors.black,
+                                border: Border.all(color: Colors.black)),
+                            child: const Center(
+                              child: Text(
+                                'តម្លៃ',
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 80,
+                        width: 300,
+                        child: ListView.builder(
+                          itemCount: 3,
+                          scrollDirection: Axis.horizontal,
+                          physics: const PageScrollPhysics(
+                              parent: NeverScrollableScrollPhysics()),
+                          itemBuilder: (context, index) => Padding(
+                            padding: const EdgeInsets.only(left: 2),
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 70,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                      //color: Colors.black,
+                                      border: Border.all(color: Colors.black)),
+                                  child: const Center(
+                                    child: Text(
+                                      '24+',
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 2,
+                                ),
+                                Container(
+                                  width: 70,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                      //color: Colors.black,
+                                      border: Border.all(color: Colors.black)),
+                                  child: const Center(
+                                    child: Text(
+                                      '\$3.85',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                        Container(
-                          width: 80,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              //color: Colors.black,
-                              border: Border.all(color: Colors.black)),
-                          child: const Center(
-                            child: Text(
-                              'តម្លៃ',
-                              style: TextStyle(fontSize: 18),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(width: 2),
-                    Column(
-                      children: [
-                        Container(
-                          width: 70,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              //color: Colors.black,
-                              border: Border.all(color: Colors.black)),
-                          child: const Center(
-                            child: Text(
-                              '24+',
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 2,
-                        ),
-                        Container(
-                          width: 70,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              //color: Colors.black,
-                              border: Border.all(color: Colors.black)),
-                          child: const Center(
-                            child: Text(
-                              '\$3.85',
-                              style: TextStyle(fontSize: 18),
-                            ),
-                          ),
-                        )
-                      ],
-                    )
-                  ],
+                      ),
+                      const SizedBox(
+                        width: 30,
+                      )
+                    ],
+                  ),
                 ),
               ),
 
@@ -340,71 +381,93 @@ class _DetailProductState extends State<DetailProduct> {
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.black),
                             borderRadius: BorderRadius.circular(14)),
-                        child: const TextField(
+                        child: TextField(
+                          controller: numberTextController,
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: '1',
-                              hintStyle: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold)),
+                              hintText: count.toString(),
+                              hintStyle: const TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold
+                              )
+                          ),
                         ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Row(children: [
-                        Container(
-                          width: 45,
-                          height: 45,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(50),
-                              boxShadow: const [
-                                BoxShadow(
-                                    spreadRadius: 0.5,
-                                    blurRadius: 5,
-                                    color: Colors.grey,
-                                    offset: Offset(1, 1)),
-                                BoxShadow(
-                                    blurRadius: 9,
-                                    spreadRadius: 0.5,
-                                    color: Colors.white,
-                                    offset: Offset(-4, -4))
-                              ]),
-                          child: const Center(
-                            child: Text(
-                              '-',
-                              style:
-                                  TextStyle(fontSize: 30, color: Colors.grey),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              if(count>1){
+                                count--;
+                                numberTextController.text = count.toString();
+                              }
+                            });
+                          },
+                          child: Container(
+                            width: 45,
+                            height: 45,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      spreadRadius: 0.5,
+                                      blurRadius: 5,
+                                      color: Colors.grey,
+                                      offset: Offset(1, 1)),
+                                  BoxShadow(
+                                      blurRadius: 9,
+                                      spreadRadius: 0.5,
+                                      color: Colors.white,
+                                      offset: Offset(-4, -4))
+                                ]),
+                            child: const Center(
+                              child: Text(
+                                '-',
+                                style:
+                                    TextStyle(fontSize: 30, color: Colors.grey),
+                              ),
                             ),
                           ),
                         ),
                         const SizedBox(
                           width: 10,
                         ),
-                        Container(
-                          width: 45,
-                          height: 45,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(50),
-                              boxShadow: const [
-                                BoxShadow(
-                                    spreadRadius: 0.5,
-                                    blurRadius: 5,
-                                    color: Colors.grey,
-                                    offset: Offset(1, 1)),
-                                BoxShadow(
-                                    blurRadius: 9,
-                                    spreadRadius: 0.5,
-                                    color: Colors.white,
-                                    offset: Offset(-4, -4))
-                              ]),
-                          child: const Center(
-                            child: Text(
-                              '+',
-                              style:
-                                  TextStyle(fontSize: 30, color: Colors.grey),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              count++;
+                              numberTextController.text = count.toString();
+                            });
+                          },
+                          child: Container(
+                            width: 45,
+                            height: 45,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      spreadRadius: 0.5,
+                                      blurRadius: 5,
+                                      color: Colors.grey,
+                                      offset: Offset(1, 1)),
+                                  BoxShadow(
+                                      blurRadius: 9,
+                                      spreadRadius: 0.5,
+                                      color: Colors.white,
+                                      offset: Offset(-4, -4)
+                                  )
+                                ]),
+                            child: const Center(
+                              child: Text(
+                                '+',
+                                style:
+                                    TextStyle(fontSize: 30, color: Colors.grey),
+                              ),
                             ),
                           ),
                         ),

@@ -14,8 +14,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('Login'),
+        backgroundColor:  const Color.fromARGB(255, 160, 202, 161),
+        title: const Text('Login',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
         centerTitle: true,
         leadingWidth: 90,
         leading: GestureDetector(
@@ -29,11 +29,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Icon(
                   Icons.arrow_back_ios,
                   size: 25,
+                  color: Colors.white,
                 ),
               ),
               Text(
                 'Back',
-                style: TextStyle(fontSize: 20),
+                style: TextStyle(fontSize: 20,color: Colors.white),
               )
             ],
           ),
@@ -77,67 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
                         onTap: () {
-                          showCupertinoModalPopup(
-                            context: context,
-                            builder: (context) {
-                              return CupertinoPopupSurface(
-                                //isSurfacePainted: false,
-                                child: Container(
-                                  height: 800,
-                                  decoration: const BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(14),
-                                          topRight: Radius.circular(14)
-                                    )
-                                  ),
-                                  child: Scaffold(
-                                    body: Column(
-                                      children: [
-                                        Container(
-                                          height: 50,
-                                          decoration: const BoxDecoration(
-                                              color: Color.fromARGB(255, 124, 158, 125),
-                                              borderRadius: BorderRadius.only(
-                                                  topLeft: Radius.circular(14),
-                                                  topRight: Radius.circular(14)
-                                            )
-                                          ),
-                                          child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.center,
-                                              children: [
-                                                const Text(
-                                                  'Mobile Phone Number Verify...',
-                                                  style: TextStyle(
-                                                      fontSize: 16,
-                                                      color: Colors.white
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(left: 50),
-                                                  child: Container(
-                                                    height: 20,
-                                                    width: 20,
-                                                    decoration: BoxDecoration(
-                                                        borderRadius:BorderRadius.circular(50),
-                                                        border: Border.all(color: Colors.black)),
-                                                    child: Padding(
-                                                      padding: const EdgeInsets.only(left: 5,bottom: 10),
-                                                      child: const Text(
-                                                        'x',
-                                                        style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)
-                                                      ),
-                                                    ),
-                                                  ),
-                                                )
-                                              ]),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          );
+                          buildMobilePhoneVerify();
                         },
                         child: Container(
                           height: 50,
@@ -213,6 +154,182 @@ class _LoginScreenState extends State<LoginScreen> {
           ]),
         ),
       ),
+    );
+  }
+
+  Future buildMobilePhoneVerify() {
+    return showCupertinoModalPopup(
+      context: context,
+      builder: (context) {
+        return CupertinoPopupSurface(
+          child: Container(
+            height: 800,
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(14),
+                    topRight: Radius.circular(14))),
+            child: Scaffold(
+              body: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      height: 50,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 124, 158, 125),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(14),
+                              topRight: Radius.circular(14))),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                              height: 50,
+                              width: 390,
+                              child: Padding(
+                                padding: EdgeInsets.only(top: 12),
+                                child: Text(
+                                  'Mobile Phone Number Verify...',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  border: Border.all(color: Colors.white)),
+                              child: const Text('x',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white)),
+                            )
+                          ]),
+                    ),
+                    Container(
+                      height: 750,
+                      decoration: const BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(
+                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQISz5V5d0HIvveamz-uKISjtVg60EriRq05xE34m2cLg&s'))),
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 200),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 5),
+                            child: Container(
+                              height: 200,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(14),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        blurRadius: 1,
+                                        color: Colors.grey,
+                                        spreadRadius: 0,
+                                        offset: Offset(0, 0))
+                                  ]),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 20, vertical: 20),
+                                      child: Column(
+                                        children: [
+                                          Stack(children: [
+                                            TextFormField(
+                                              keyboardAppearance:
+                                                  Brightness.dark,
+                                              style:
+                                                  const TextStyle(fontSize: 18),
+                                              decoration: const InputDecoration(
+                                                border: OutlineInputBorder(),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                            color:
+                                                                Colors.white)),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                            color:
+                                                                Colors.white)),
+                                                suffixIcon: Icon(Icons
+                                                    .phone_android_outlined),
+                                                labelText: 'Phone number',
+                                                //label: Text('asdfs'),
+                                                labelStyle: TextStyle(
+                                                    fontSize: 18,
+                                                    color: Colors.black),
+                                              ),
+                                            ),
+                                            const Positioned(
+                                              left: 0,
+                                              right: 0,
+                                              bottom: 5,
+                                              child: Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 13),
+                                                child: Divider(
+                                                  color: Color.fromARGB(
+                                                      255, 229, 223, 223),
+                                                  height: 5,
+                                                  thickness: 1,
+                                                  //indent: 20,
+                                                ),
+                                              ),
+                                            )
+                                          ]),
+                                        ],
+                                      )),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 10),
+                                    child: Container(
+                                      height: 50,
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                          color: const Color.fromARGB(
+                                                  255, 124, 158, 125)
+                                              .withOpacity(0.5),
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: const Padding(
+                                        padding: EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          'SEND OTP',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white),
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

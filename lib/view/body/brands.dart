@@ -26,7 +26,7 @@ class BrandsState extends State<Brands> {
             child: Row(
               children: [
                 Text(
-                  'ក្រុមហ៊ុនផលិត',
+                  'BRANDS',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 )
               ],
@@ -41,18 +41,17 @@ class BrandsState extends State<Brands> {
                 );
               },
               child: SizedBox(
-                  height: 165,
+                  height: 170,
                   //color: Colors.grey,
                   child: Scrollbar(
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: list.length,
                         itemBuilder: (context, index) => Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 5),
-                              child: Column(
+                          padding:const EdgeInsets.symmetric(horizontal: 5),
+                          child: Column(
                                 //crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
+                              children: [
                                   Container(
                                     width: 127,
                                     height: 150,
@@ -69,10 +68,13 @@ class BrandsState extends State<Brands> {
                                             fit: BoxFit.cover,
                                             image: NetworkImage(list[index]))),
                                   ),
+                                  SizedBox(height: 15,)
                                 ],
-                              ),
-                            )),
-                  )),
+                          ),
+                        )
+                    ),
+                  )
+              ),
             ),
           ),
         ],

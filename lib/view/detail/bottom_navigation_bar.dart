@@ -3,7 +3,6 @@ import 'package:shop_project/view/body/home_page_screen.dart';
 import 'package:shop_project/view/detail/account_screen.dart';
 import 'package:shop_project/view/detail/category_list.dart';
 import 'package:shop_project/view/detail/scan_barcode.dart';
-import 'package:shop_project/view/drawer/contact_screen.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -33,7 +32,6 @@ class _BottomBarState extends State<BottomBar> {
           currentIndex: selectItem,
           backgroundColor: const Color.fromARGB(255, 94, 151, 96),
           type: BottomNavigationBarType.fixed,
-          showUnselectedLabels: false,
           showSelectedLabels: false,
           elevation: 0,
           iconSize: 30,

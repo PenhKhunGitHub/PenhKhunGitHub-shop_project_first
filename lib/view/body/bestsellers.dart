@@ -28,7 +28,7 @@ class BestSellersState extends State<BestSellers> {
               child: Row(
                 children: [
                   Text(
-                    'ផលិតផលពិសេស',
+                    'BESTSELLERS',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   )
                 ],
@@ -38,11 +38,8 @@ class BestSellersState extends State<BestSellers> {
               padding: const EdgeInsets.symmetric(vertical: 15),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context)=> const DetailProduct()
-                    )
-                  );
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const DetailProduct()));
                 },
                 child: SizedBox(
                     height: 260,
@@ -50,84 +47,95 @@ class BestSellersState extends State<BestSellers> {
                         scrollDirection: Axis.horizontal,
                         itemCount: list.length,
                         itemBuilder: (context, index) => Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 5,vertical: 5),
-                          child: Container(
-                            width: 150,
-                            height: 250,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(5),
-                              boxShadow:  [
-                                BoxShadow(
-                                  blurRadius: 2,
-                                  color: Colors.grey.withOpacity(0.3),
-                                  spreadRadius: 1,
-                                  offset: const Offset(1,1)
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 5),
+                              child: Container(
+                                width: 150,
+                                height: 250,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        blurRadius: 2,
+                                        color: Colors.grey.withOpacity(0.3),
+                                        spreadRadius: 1,
+                                        offset: const Offset(1, 1)),
+                                  ],
                                 ),
-                              ],
-                            ),
-                            child: Column(
-                              children: [
-                                Padding(
-                                padding: const EdgeInsets.only(top: 5),
-                                  child: Container(
-                                    width: 140,
-                                    height: 130,
-                                    decoration: BoxDecoration(
-                                      borderRadius:const BorderRadius.only(
-                                        topLeft: Radius.circular(5),
-                                        topRight:Radius.circular(5)
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 5),
+                                      child: Container(
+                                        width: 140,
+                                        height: 130,
+                                        decoration: BoxDecoration(
+                                            borderRadius:const BorderRadius.only(
+                                              topLeft: Radius.circular(5),
+                                              topRight:Radius.circular(5)
+                                            ),
+                                            image: DecorationImage(
+                                                fit: BoxFit.cover,
+                                                image:
+                                                    NetworkImage(list[index]))),
                                       ),
-                                      image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: NetworkImage(list[index])
-                                      )
                                     ),
-                                  ),
-                                ),
-                          const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  'ទំនិញ',
-                                  overflow: TextOverflow.clip,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold
+                                    const Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Text(
+                                        'sfsdgdgsdaasdfsdfsfssfd',
+                                        textAlign: TextAlign.center,
+                                        overflow: TextOverflow.clip,
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                                Center(
-                                  child: RatingBar.builder(
-                                    ignoreGestures: true,
-                                    itemCount: 5,
-                                    itemSize: 14,
-                                    //itemPadding: EdgeInsets.symmetric(),
-                                    itemBuilder: (context, _) => const Icon(
-                                      Icons.star,
+                                    Center(
+                                      child: RatingBar.builder(
+                                        ignoreGestures: true,
+                                        itemCount: 5,
+                                        itemSize: 14,
+                                        //itemPadding: EdgeInsets.symmetric(),
+                                        itemBuilder: (context, _) => const Icon(
+                                          Icons.star,
+                                        ),
+                                        onRatingUpdate: (rating) {
+                                          // ignore: avoid_print
+                                          print(rating);
+                                        },
+                                      ),
                                     ),
-                                    onRatingUpdate: (rating) {
-                                    // ignore: avoid_print
-                                    print(rating);
-                                    },
-                                  ),
-                                ),
-                          const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text(
-                                  '\$ 12',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.bold
+                                    const Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            '\$12',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.red,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          SizedBox(width: 5,),
+                                          Text(
+                                            '\$12',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.grey,
+                                                fontWeight: FontWeight.bold,
+                                                decoration: TextDecoration.lineThrough
+                                              ),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  )
-                ),
+                            ))),
               ),
             ),
             const SizedBox(

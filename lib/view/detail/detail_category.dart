@@ -15,7 +15,7 @@ class _CategoryDetailState extends State<CategoryDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 160, 202, 161),
         title: const Text(
           'Category Detail',
           style: TextStyle(color: Colors.white),
@@ -129,11 +129,12 @@ class _CategoryDetailState extends State<CategoryDetail> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
-                              blurRadius: 8,
-                              spreadRadius: 1,
-                              color: Colors.black.withOpacity(0.5)
+                                spreadRadius: 0,
+                                blurRadius: 8,
+                                color: Colors.grey,
+                                offset: Offset(1, 2)
                             )
                           ]
                         ),

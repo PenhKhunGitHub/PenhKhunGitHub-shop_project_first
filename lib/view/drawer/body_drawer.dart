@@ -5,7 +5,6 @@ import 'package:shop_project/view/drawer/faq_screen.dart';
 import 'package:shop_project/view/drawer/language_screen.dart';
 import 'package:shop_project/view/drawer/privacy_policy_screen.dart';
 import 'package:shop_project/view/drawer/vendor_screen.dart';
-
 class BodyDrawer extends StatefulWidget {
   const BodyDrawer({super.key});
 
@@ -33,7 +32,7 @@ class _BodyDrawerState extends State<BodyDrawer> {
 
   int selectItem = 1;
   Widget buildItem(int id, String title, IconData icon) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         if (id == 1) {
           Navigator.of(context).push(MaterialPageRoute(
@@ -77,10 +76,9 @@ class _BodyDrawerState extends State<BodyDrawer> {
       },
       child: Column(
         children: [
-          Container(
+          SizedBox(
             height: 50,
             width: double.infinity,
-            color: Colors.white,
             child: Row(
               children: [
               Expanded(

@@ -13,10 +13,10 @@ class _AboutScreenState extends State<PrivacyPolicyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 160, 202, 161),
         title: const Text(
           'Privacy Policy',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         leadingWidth: 90,
