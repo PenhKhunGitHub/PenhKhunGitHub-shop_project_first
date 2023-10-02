@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:shop_project/view/detail/detail_category.dart';
+import 'package:shop_project/view/detail/shopping_cart.dart';
 
 class CategoryList extends StatefulWidget {
   const CategoryList({super.key});
@@ -14,7 +16,10 @@ class _CategoryListState extends State<CategoryList> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 160, 202, 161),
-        title: const Text('Category',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+        title: const Text(
+          'Category',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
         centerTitle: true,
         leadingWidth: 90,
         leading: GestureDetector(
@@ -33,7 +38,7 @@ class _CategoryListState extends State<CategoryList> {
               ),
               Text(
                 'Back',
-                style: TextStyle(fontSize: 20,color: Colors.white),
+                style: TextStyle(fontSize: 20, color: Colors.white),
               )
             ],
           ),
@@ -68,65 +73,79 @@ class _CategoryListState extends State<CategoryList> {
           //Badges Shopping Card
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: badges.Badge(
-                position: badges.BadgePosition.topEnd(
-                  top: -10,
-                  end: -8,
-                ),
-                showBadge: true,
-                ignorePointer: false,
-                onTap: () {},
-                badgeContent: const Text(
-                  '1',
-                  style: TextStyle(fontSize: 10, color: Colors.white),
-                ),
-                badgeStyle: badges.BadgeStyle(
-                  badgeColor: Colors.blue,
-                  padding: const EdgeInsets.all(5),
-                  borderRadius: BorderRadius.circular(20),
-                  elevation: 0,
-                ),
-                child: const Icon(
-                  Icons.shopping_cart,
-                  size: 30,
-                  color: Colors.white,
-                )),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context)=>const ShoppingCartScreen())
+                );
+              },
+              child: badges.Badge(
+                  position: badges.BadgePosition.topEnd(
+                    top: -10,
+                    end: -8,
+                  ),
+                  showBadge: true,
+                  ignorePointer: false,
+                  onTap: () {},
+                  badgeContent: const Text(
+                    '1',
+                    style: TextStyle(fontSize: 10, color: Colors.white),
+                  ),
+                  badgeStyle: badges.BadgeStyle(
+                    badgeColor: Colors.blue,
+                    padding: const EdgeInsets.all(5),
+                    borderRadius: BorderRadius.circular(20),
+                    elevation: 0,
+                  ),
+                  child: const Icon(
+                    Icons.shopping_cart,
+                    size: 30,
+                    color: Colors.white,
+                  )),
+            ),
           ),
         ],
       ),
       body: ListView.builder(
           itemCount: 5,
           itemBuilder: (context, index) {
-            return const Column(
+            return Column(
               children: [
-                SizedBox(
-                  height: 60,
-                  width: double.infinity,
-                  child: Row(
-                    children: [
-                      Expanded(
-                          flex: 1,
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const CategoryDetail()));
+                  },
+                  child: const SizedBox(
+                    height: 60,
+                    width: double.infinity,
+                    child: Row(
+                      children: [
+                        Expanded(
+                            flex: 1,
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 3, bottom: 3),
+                              child: Image(
+                                  fit: BoxFit.contain,
+                                  image: NetworkImage(
+                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuiOSj0t5Vg1KCnXSmhrahJn_WJuuxRGraGA&usqp=CAU')),
+                            )),
+                        Expanded(
+                          flex: 3,
                           child: Padding(
-                            padding: EdgeInsets.only(top: 3, bottom: 3),
-                            child: Image(
-                                fit: BoxFit.contain,
-                                image: NetworkImage(
-                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpvtuYumHWGsUeyuEuUMAAz2i_P54EVA3ePQ&usqp=CAU')),
-                          )),
-                      Expanded(
-                        flex: 3,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: Text(
-                            'Khun',
-                            style: TextStyle(fontSize: 20),
+                            padding: EdgeInsets.only(left: 10),
+                            child: Text(
+                              'Siang Pure Euw Balm',
+                              style: TextStyle(fontSize: 18),
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
-                Divider(
+                const Divider(
                   color: Color.fromARGB(255, 229, 223, 223),
                   height: 5,
                   thickness: 1,

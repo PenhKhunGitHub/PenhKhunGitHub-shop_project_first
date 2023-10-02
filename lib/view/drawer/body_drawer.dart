@@ -95,11 +95,11 @@ class _BodyDrawerState extends State<BodyDrawer> {
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(fontSize: 20),
+                      style: const TextStyle(fontSize: 18),
                     ),
                     const Icon(
                       Icons.arrow_forward_ios_outlined,
-                      size: 20,
+                      size: 18,
                       color: Color.fromARGB(255, 211, 208, 208),
                     ),
                   ],

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_project/view/detail/bottom_navigation_bar.dart';
-import 'package:shop_project/view/detail/shopping_cart.dart';
-import 'package:shop_project/view/drawer/vendor_screen.dart';
+
 
 void main() {
   runApp(const MyApp());

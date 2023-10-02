@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop_project/view/detail/login.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:shop_project/view/detail/shopping_cart.dart';
+import 'package:shop_project/view/detail/wishlish_screen.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -22,9 +24,7 @@ class _BodyDrawerState extends State<AccountScreen> {
         centerTitle: true,
         leadingWidth: 90,
         leading: GestureDetector(
-          onTap: () {
-            
-          },
+          onTap: () {},
           child: const Row(
             children: [
               Padding(
@@ -72,29 +72,36 @@ class _BodyDrawerState extends State<AccountScreen> {
           //Badges Shopping Card
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: badges.Badge(
-                position: badges.BadgePosition.topEnd(
-                  top: -10,
-                  end: -8,
-                ),
-                showBadge: true,
-                ignorePointer: false,
-                onTap: () {},
-                badgeContent: const Text(
-                  '1',
-                  style: TextStyle(fontSize: 10, color: Colors.white),
-                ),
-                badgeStyle: badges.BadgeStyle(
-                  badgeColor: Colors.blue,
-                  padding: const EdgeInsets.all(5),
-                  borderRadius: BorderRadius.circular(20),
-                  elevation: 0,
-                ),
-                child: const Icon(
-                  Icons.shopping_cart,
-                  size: 30,
-                  color: Colors.white,
-                )),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context)=>const ShoppingCartScreen())
+                );
+              },
+              child: badges.Badge(
+                  position: badges.BadgePosition.topEnd(
+                    top: -10,
+                    end: -8,
+                  ),
+                  showBadge: true,
+                  ignorePointer: false,
+                  onTap: () {},
+                  badgeContent: const Text(
+                    '1',
+                    style: TextStyle(fontSize: 10, color: Colors.white),
+                  ),
+                  badgeStyle: badges.BadgeStyle(
+                    badgeColor: Colors.blue,
+                    padding: const EdgeInsets.all(5),
+                    borderRadius: BorderRadius.circular(20),
+                    elevation: 0,
+                  ),
+                  child: const Icon(
+                    Icons.shopping_cart,
+                    size: 30,
+                    color: Colors.white,
+                  )),
+            ),
           ),
         ],
       ),
@@ -122,11 +129,11 @@ class _BodyDrawerState extends State<AccountScreen> {
           Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const LoginScreen()));
         } else if (id == 2) {
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const LoginScreen()));
-        } else if (id == 3) {
           Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const LoginScreen()));
+        } else if (id == 3) {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const WishlishScreen()));
         } else if (id == 4) {
           Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const LoginScreen()));
@@ -134,14 +141,14 @@ class _BodyDrawerState extends State<AccountScreen> {
           Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => const LoginScreen()));
         } else if (id == 6) {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => const LoginScreen()));
-        }else if (id == 7) {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => const LoginScreen()));
-        }else if (id == 8) {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => const LoginScreen()));
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const LoginScreen()));
+        } else if (id == 7) {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const LoginScreen()));
+        } else if (id == 8) {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const LoginScreen()));
         }
         setState(() {
           selectItem = id;
@@ -166,7 +173,7 @@ class _BodyDrawerState extends State<AccountScreen> {
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(fontSize: 20),
+                      style: const TextStyle(fontSize: 18),
                     ),
                     const Padding(
                       padding: EdgeInsets.only(right: 10),

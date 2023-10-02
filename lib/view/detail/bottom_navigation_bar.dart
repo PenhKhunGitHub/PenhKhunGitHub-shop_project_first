@@ -41,16 +41,16 @@ class _BottomBarState extends State<BottomBar> {
             label: ''
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu,color: selectItem==1 ?Colors.white:const Color.fromARGB(255, 193, 187, 187)),
+            icon: Icon(Icons.list_rounded,color: selectItem==1 ?Colors.white:const Color.fromARGB(255, 193, 187, 187)),
             label: '',
             
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.adf_scanner_rounded,color: selectItem==2 ?Colors.white:const Color.fromARGB(255, 193, 187, 187)),
+            icon: Icon(Icons.qr_code_scanner_outlined,color: selectItem==2 ?Colors.white:const Color.fromARGB(255, 193, 187, 187)),
             label: ''
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person,color: selectItem==3 ?Colors.white:const Color.fromARGB(255, 193, 187, 187)),
+            icon: Icon(Icons.account_box_rounded,color: selectItem==3 ?Colors.white:const Color.fromARGB(255, 193, 187, 187)),
             label: '',
           ),
         ],

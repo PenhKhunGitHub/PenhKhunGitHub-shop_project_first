@@ -5,6 +5,7 @@ import 'package:shop_project/view/body/brands.dart';
 import 'package:shop_project/view/body/sliable.dart';
 import 'package:shop_project/view/body/feature_product.dart';
 import 'package:shop_project/view/body/category.dart';
+import 'package:shop_project/view/detail/search_screen.dart';
 import 'package:shop_project/view/detail/shopping_cart.dart';
 import 'package:shop_project/view/drawer/body_drawer.dart';
 import 'package:shop_project/view/drawer/header_drawer.dart';
@@ -19,7 +20,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, //const Color(0xFFEDECF2),
+      backgroundColor: const Color.fromARGB(255, 223, 220, 220).withOpacity(0.2), //const Color(0xFFEDECF2),
       drawer: const Drawer(
         backgroundColor: Colors.white,
         child: SingleChildScrollView(
@@ -34,7 +35,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         // Title Image App Bar
         title: const Text(
           'Shop App',
-          style: TextStyle(color: Colors.purple),
+          style: TextStyle(color: Colors.purple,fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         // Button Setting
@@ -83,9 +84,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
             child: InkWell(
               onTap: () {
                 Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context)=>const ShoppingCartScreen())
-                );
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ShoppingCartScreen()));
               },
               child: badges.Badge(
                   position: badges.BadgePosition.topEnd(
@@ -114,30 +115,38 @@ class _HomePageScreenState extends State<HomePageScreen> {
           ),
         ],
         bottom: PreferredSize(
-          preferredSize:  const Size.fromHeight(50.0), 
-          child:  Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20,bottom: 5),
-              child: TextFormField(
-                decoration: InputDecoration(
+          preferredSize: const Size.fromHeight(50.0),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 5),
+            child: TextFormField(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context)=>const SearchScreen())
+                );
+              },
+              decoration: InputDecoration(
                   fillColor: Colors.white,
                   filled: true,
                   contentPadding: const EdgeInsets.all(8.0),
                   border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20)),
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide.none
+                  ),
                   hintText: 'Search...',
                   hintStyle: const TextStyle(fontSize: 20),
                   prefixIcon: const Icon(
-                  Icons.search_outlined,
-                  size: 30,
+                    Icons.search_outlined,
+                    size: 30,
+                    color: Color.fromARGB(255, 120, 118, 118),
                   )
                 ),
-              ),
             ),
+          ),
         ),
       ),
       body: const SingleChildScrollView(
         child: Column(
-          children: [      
+          children: [
             //Sliable Images
             SliableScreen(),
             //Category

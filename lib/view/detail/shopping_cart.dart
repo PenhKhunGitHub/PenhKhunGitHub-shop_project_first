@@ -320,7 +320,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
               ],
             ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           const Padding(
             padding: EdgeInsets.only(left: 20,right: 15,bottom: 5),
             child: Row(
@@ -333,7 +333,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                 Text(
                   '\$8.99',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 76, 98, 115)
                     ),

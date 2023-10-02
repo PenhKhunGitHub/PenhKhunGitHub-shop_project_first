@@ -10,10 +10,10 @@ class Categories extends StatefulWidget {
 
 class CategoriesState extends State<Categories> {
   List<String> list = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
   ];
   @override
   Widget build(BuildContext context) {
@@ -30,60 +30,69 @@ class CategoriesState extends State<Categories> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 3, top: 10),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context)=> const CategoryDetail(),
-                  )
-                );
-              },
-              child: Scrollbar(
-                child: SizedBox(
-                    height: 220,
-                    //color: Colors.grey,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: list.length,
-                        itemBuilder: (context, index) => Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 5),
-                              child: Column(
-                                //crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 127,
-                                    height: 150,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(14),
-                                        boxShadow: const [
-                                          BoxShadow(
-                                              blurRadius: 0,
-                                              color: Colors.grey,
-                                              spreadRadius: 1,
-                                              offset: Offset(0, 0)
+            padding: const EdgeInsets.only(top: 10),
+            child: Scrollbar(
+              child: SizedBox(
+                  height: 220,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: list.length,
+                      itemBuilder: (context, index) => Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 3),
+                            child: Column(
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context)=> const CategoryDetail(),
+                                      )
+                                    );
+                                  },
+                                  child: SizedBox(
+                                    width: 133,
+                                    height: 210,
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 150,
+                                          width: 133,
+                                          decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(14),
+                                          border: Border.all(color: Colors.grey.withOpacity(0.2)),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                blurRadius: 5,
+                                                color: Colors.grey.withOpacity(0.5),
+                                                spreadRadius: 0.2,
+                                                offset: const Offset(2, 2)
+                                            ),
+                                          ],
+                                          image: DecorationImage(
+                                              //fit: BoxFit.cover,
+                                              image: NetworkImage(list[index])
                                           )
-                                        ],
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: NetworkImage(list[index]))),
-                                  ),
-                                  const Padding(
-                                    padding: EdgeInsets.only(left: 5, top: 5),
-                                    child: SizedBox(
-                                      height: 30,
-                                      child: Text(
-                                        'Khun',
-                                        overflow: TextOverflow.ellipsis,
+                                        ),
                                       ),
+                                      Padding(
+                                      padding: const EdgeInsets.only(left: 2, top: 5,right: 2),
+                                      child: Text(
+                                        'Siang Pure Euw Balm',
+                                        textAlign: TextAlign.center,
+                                        overflow: TextOverflow.clip,
+                                        style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.black.withOpacity(0.7)),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ],
-                              ),
-                            )
+                                ),
+                              ],
+                            ),
                           )
-                      ),
-              ),
+                        )
+                    ),
             ),
           ),
         ],

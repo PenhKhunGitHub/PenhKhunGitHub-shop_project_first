@@ -11,10 +11,10 @@ class BestSellers extends StatefulWidget {
 
 class BestSellersState extends State<BestSellers> {
   List<String> list = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
   ];
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class BestSellersState extends State<BestSellers> {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 5, vertical: 5),
                               child: Container(
-                                width: 150,
+                                width: 160,
                                 height: 250,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -68,7 +68,7 @@ class BestSellersState extends State<BestSellers> {
                                     Padding(
                                       padding: const EdgeInsets.only(top: 5),
                                       child: Container(
-                                        width: 140,
+                                        width: 150,
                                         height: 130,
                                         decoration: BoxDecoration(
                                             borderRadius:const BorderRadius.only(
@@ -84,7 +84,7 @@ class BestSellersState extends State<BestSellers> {
                                     const Padding(
                                       padding: EdgeInsets.all(8.0),
                                       child: Text(
-                                        'sfsdgdgsdaasdfsdfsfssfd',
+                                        'Siang Pure Euw Balm',
                                         textAlign: TextAlign.center,
                                         overflow: TextOverflow.clip,
                                         style: TextStyle(
@@ -113,17 +113,17 @@ class BestSellersState extends State<BestSellers> {
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            '\$12',
+                                            '\$12.99',
                                             style: TextStyle(
-                                                fontSize: 14,
-                                                color: Colors.red,
+                                                fontSize: 16,
+                                                color: Color.fromARGB(255, 76, 98, 115),
                                                 fontWeight: FontWeight.bold),
                                           ),
-                                          SizedBox(width: 5,),
+                                          SizedBox(width: 10,),
                                           Text(
-                                            '\$12',
+                                            '\$15.5',
                                             style: TextStyle(
-                                                fontSize: 14,
+                                                fontSize: 16,
                                                 color: Colors.grey,
                                                 fontWeight: FontWeight.bold,
                                                 decoration: TextDecoration.lineThrough

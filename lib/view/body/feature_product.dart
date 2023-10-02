@@ -11,10 +11,10 @@ class FeaturedProduct extends StatefulWidget {
 
 class FeatureProductState extends State<FeaturedProduct> {
   List<String> list = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
   ];
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class FeatureProductState extends State<FeaturedProduct> {
                       itemCount: list.length,
                       itemBuilder: (context, index) => Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 5, vertical: 5),
+                                horizontal: 3, vertical: 5),
                             child: GestureDetector(
                               onTap: () {
                                 Navigator.of(context).push(
@@ -51,7 +51,7 @@ class FeatureProductState extends State<FeaturedProduct> {
                                 );
                               },
                               child: Container(
-                                width: 150,
+                                width: 160,
                                 height: 250,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -61,7 +61,8 @@ class FeatureProductState extends State<FeaturedProduct> {
                                         blurRadius: 2,
                                         color: Colors.grey.withOpacity(0.3),
                                         spreadRadius: 1,
-                                        offset: const Offset(1, 1)),
+                                        offset: const Offset(1, 1)
+                                    ),
                                   ],
                                 ),
                                 child: Column(
@@ -69,7 +70,7 @@ class FeatureProductState extends State<FeaturedProduct> {
                                     Padding(
                                       padding: const EdgeInsets.only(top: 5),
                                       child: Container(
-                                        width: 140,
+                                        width: 150,
                                         height: 130,
                                         decoration: BoxDecoration(
                                           borderRadius:const BorderRadius.only(
@@ -85,7 +86,8 @@ class FeatureProductState extends State<FeaturedProduct> {
                                     const Padding(
                                       padding: EdgeInsets.all(8.0),
                                       child: Text(
-                                        'ទំនិញ',
+                                        'Siang Pure Euw Balm',
+                                        textAlign: TextAlign.center,
                                         overflow: TextOverflow.clip,
                                         style: TextStyle(
                                             fontSize: 16,
@@ -110,12 +112,27 @@ class FeatureProductState extends State<FeaturedProduct> {
                                     ),
                                     const Padding(
                                       padding: EdgeInsets.all(8.0),
-                                      child: Text(
-                                        '\$ 12',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.red,
-                                            fontWeight: FontWeight.bold),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            '\$11.90',
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                color: Color.fromARGB(255, 76, 98, 115),
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          SizedBox(width: 10,),
+                                          Text(
+                                            '\$14.00',
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                decoration: TextDecoration.lineThrough,
+                                                color: Colors.grey,
+                                                fontWeight: FontWeight.bold
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     )
                                   ],

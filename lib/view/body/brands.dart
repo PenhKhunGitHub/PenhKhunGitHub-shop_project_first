@@ -10,10 +10,10 @@ class Brands extends StatefulWidget {
 
 class BrandsState extends State<Brands> {
   List<String> list = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxAWoBDK6F_m6XH4I9UyYWtO1BIJxTpJlGbA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
   ];
   @override
   Widget build(BuildContext context) {
@@ -34,47 +34,51 @@ class BrandsState extends State<Brands> {
           ),
           Padding(
             padding: const EdgeInsets.only(right: 3, top: 10),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context)=> const BrandDetail())
-                );
-              },
-              child: SizedBox(
-                  height: 170,
-                  //color: Colors.grey,
-                  child: Scrollbar(
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: list.length,
-                        itemBuilder: (context, index) => Padding(
-                          padding:const EdgeInsets.symmetric(horizontal: 5),
-                          child: Column(
-                                //crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                  Container(
+            child: SizedBox(
+                height: 170,
+                //color: Colors.grey,
+                child: Scrollbar(
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: list.length,
+                      itemBuilder: (context, index) => Padding(
+                        padding:const EdgeInsets.symmetric(horizontal: 5,),
+                        child: Column(
+                              //crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(builder: (context)=> const BrandDetail())
+                                    );
+                                  },
+                                  child: Container(
                                     width: 127,
                                     height: 150,
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(14),
-                                        boxShadow: const [
-                                          BoxShadow(
-                                              blurRadius: 0,
-                                              color: Colors.grey,
-                                              spreadRadius: 1,
-                                              offset: Offset(0, 0))
-                                        ],
-                                        image: DecorationImage(
-                                            fit: BoxFit.cover,
-                                            image: NetworkImage(list[index]))),
-                                  ),
-                                  SizedBox(height: 15,)
-                                ],
-                          ),
-                        )
-                    ),
-                  )
-              ),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(14),
+                                      border: Border.all(color: Colors.grey.withOpacity(0.2)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 5,
+                                          color: Colors.grey.withOpacity(0.5),
+                                          spreadRadius: 0.2,
+                                          offset: const Offset(2, 2)
+                                        ),
+                                      ],
+                                      image: DecorationImage(
+                                        image: NetworkImage(list[index])
+                                  )
+                                                              ),
+                                                            ),
+                                ),
+                            SizedBox(height: 15,)
+                          ],
+                        ),
+                      )
+                  ),
+                )
             ),
           ),
         ],

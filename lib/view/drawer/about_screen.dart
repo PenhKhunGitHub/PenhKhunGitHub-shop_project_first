@@ -97,6 +97,301 @@ class _AboutScreenState extends State<AboutScreen> {
           ),
         ],
       ),
+      body: const Center(
+        child: SingleChildScrollView(
+          child: Scrollbar(
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'Biref History',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Text('Kheang Hout operated in Cambodia for over 15',
+                    style: TextStyle(fontSize: 16)),
+                Text('years. We specialize in distributing food and',
+                    style: TextStyle(fontSize: 16)),
+                Text('beverages products. Our star products are Carabao',
+                    style: TextStyle(fontSize: 16)),
+                Text('Energy Drink, Ichitan Green Tea and Siang Pure that',
+                    style: TextStyle(fontSize: 16)),
+                Text('are heavily supported by our fellow Cambodians.',
+                    style: TextStyle(fontSize: 16)),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'Core Value',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 150),
+                        child: Icon(Icons.brightness_1_rounded, size: 10),
+                      ),
+                      Text(
+                        'Integrity',
+                        style: TextStyle(fontSize: 17),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20, top: 5),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 133),
+                        child: Icon(Icons.brightness_1_rounded, size: 10),
+                      ),
+                      Text(
+                        'Commitment',
+                        style: TextStyle(fontSize: 17),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20, top: 5),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 120),
+                        child: Icon(Icons.brightness_1_rounded, size: 10),
+                      ),
+                      Text(
+                        'Quality of Service',
+                        style: TextStyle(fontSize: 17),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'Objective',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 5),
+                        child: Icon(Icons.brightness_1_rounded, size: 10),
+                      ),
+                      Text(
+                        'To ensure our customer is able to adapt to our',
+                        style: TextStyle(fontSize: 17),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'platform with ease',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 5),
+                        child: Icon(Icons.brightness_1_rounded, size: 10),
+                      ),
+                      Text(
+                        'Ensuring adequate amount of product variety',
+                        style: TextStyle(fontSize: 17),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'o satisfy customer\'s needMission',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'Mission',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 5),
+                        child: Icon(Icons.brightness_1_rounded, size: 10),
+                      ),
+                      Text(
+                        'Our mission is to achieve a minimum of 10,000',
+                        style: TextStyle(fontSize: 17),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'active user on our ecommerce platform by',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 5, bottom: 15),
+                  child: Text(
+                    '2022',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'Version',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(right: 30),
+                        child: Icon(Icons.brightness_1_rounded, size: 10),
+                      ),
+                      Text(
+                        'Our vision is to provide a convenient',
+                        style: TextStyle(fontSize: 17),
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'experience for our customer through',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 5, bottom: 15),
+                  child: Text(
+                    'technology implementation',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'Contact',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Email:',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 17,
+                        ),
+                      ),
+                      Text(
+                        ' help@kheanghout.com',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            decorationColor: Colors.blue,
+                            fontSize: 17,
+                            color: Color.fromARGB(255, 87, 115, 138)),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 15, bottom: 15),
+                  child: Text(
+                    'Telephone: 023996385',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 20,
+                  ),
+                  child: Text(
+                    'Address: No 14, St 201, Sangkat Toul Svay Prey II,',
+                    style: TextStyle(fontSize: 17),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 10, bottom: 15),
+                  child: Text(
+                    'Khan Boueng Kok III,Phnom Penh,Cambodia',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30,)
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

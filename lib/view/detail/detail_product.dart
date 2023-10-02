@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:shop_project/view/detail/shopping_cart.dart';
 
 class DetailProduct extends StatefulWidget {
   const DetailProduct({super.key});
@@ -82,29 +83,36 @@ class _DetailProductState extends State<DetailProduct> {
             //Badges Shopping Card
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: badges.Badge(
-                  position: badges.BadgePosition.topEnd(
-                    top: -10,
-                    end: -8,
-                  ),
-                  showBadge: true,
-                  ignorePointer: false,
-                  onTap: () {},
-                  badgeContent: const Text(
-                    '1',
-                    style: TextStyle(fontSize: 10, color: Colors.white),
-                  ),
-                  badgeStyle: badges.BadgeStyle(
-                    badgeColor: Colors.blue,
-                    padding: const EdgeInsets.all(5),
-                    borderRadius: BorderRadius.circular(20),
-                    elevation: 0,
-                  ),
-                  child: const Icon(
-                    Icons.shopping_cart,
-                    size: 30,
-                    color: Colors.white,
-                  )),
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context)=>const ShoppingCartScreen())
+                  );
+                },
+                child: badges.Badge(
+                    position: badges.BadgePosition.topEnd(
+                      top: -10,
+                      end: -8,
+                    ),
+                    showBadge: true,
+                    ignorePointer: false,
+                    onTap: () {},
+                    badgeContent: const Text(
+                      '1',
+                      style: TextStyle(fontSize: 10, color: Colors.white),
+                    ),
+                    badgeStyle: badges.BadgeStyle(
+                      badgeColor: Colors.blue,
+                      padding: const EdgeInsets.all(5),
+                      borderRadius: BorderRadius.circular(20),
+                      elevation: 0,
+                    ),
+                    child: const Icon(
+                      Icons.shopping_cart,
+                      size: 30,
+                      color: Colors.white,
+                    )),
+              ),
             ),
           ],
         ),
@@ -177,7 +185,7 @@ class _DetailProductState extends State<DetailProduct> {
               //Star And Check
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 child: Row(
                   children: [
                     Expanded(
@@ -214,13 +222,15 @@ class _DetailProductState extends State<DetailProduct> {
               ),
               //Pirce Product
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 child: Row(
                   children: [
                     Text(
                       '\$3.99',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 76, 98, 115)),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 10),
@@ -228,7 +238,7 @@ class _DetailProductState extends State<DetailProduct> {
                         '\$5.00',
                         style: TextStyle(
                             decoration: TextDecoration.lineThrough,
-                            fontSize: 18,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Color.fromARGB(255, 147, 144, 144)),
                       ),
@@ -376,21 +386,21 @@ class _DetailProductState extends State<DetailProduct> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Container(
-                        width: 100,
-                        height: 50,
+                        width: 130,
+                        height: 45,
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black),
-                            borderRadius: BorderRadius.circular(14)),
+                            border: Border.all(
+                                color: Colors.black.withOpacity(0.3)),
+                            borderRadius: BorderRadius.circular(40)),
                         child: TextField(
                           controller: numberTextController,
                           textAlign: TextAlign.center,
                           decoration: InputDecoration(
+                              contentPadding: EdgeInsets.all(8.0),
                               border: InputBorder.none,
                               hintText: count.toString(),
                               hintStyle: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold
-                              )
-                          ),
+                                  fontSize: 20, fontWeight: FontWeight.bold)),
                         ),
                       ),
                     ),
@@ -400,7 +410,7 @@ class _DetailProductState extends State<DetailProduct> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-                              if(count>1){
+                              if (count > 1) {
                                 count--;
                                 numberTextController.text = count.toString();
                               }
@@ -459,8 +469,7 @@ class _DetailProductState extends State<DetailProduct> {
                                       blurRadius: 9,
                                       spreadRadius: 0.5,
                                       color: Colors.white,
-                                      offset: Offset(-4, -4)
-                                  )
+                                      offset: Offset(-4, -4))
                                 ]),
                             child: const Center(
                               child: Text(

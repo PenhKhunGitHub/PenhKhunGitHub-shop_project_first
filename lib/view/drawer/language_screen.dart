@@ -141,6 +141,7 @@ class _AboutScreenState extends State<LanguagesScreen> {
                           ),
                         ),
                       ]),
+                      
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Divider(

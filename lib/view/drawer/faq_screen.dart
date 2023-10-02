@@ -98,7 +98,8 @@ class _AboutScreenState extends State<FAQScreen> {
                   Icons.shopping_cart,
                   size: 30,
                   color: Colors.white,
-                )),
+                )
+            ),
           ),
         ],
       ),

@@ -38,6 +38,7 @@ class _ScanbarCodeScreenState extends State<ScanbarCodeScreen> {
             ],
           ),
         ),
+        
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
