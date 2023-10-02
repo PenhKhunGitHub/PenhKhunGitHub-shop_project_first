@@ -129,7 +129,8 @@ class _AboutScreenState extends State<LanguagesScreen> {
                           child: Text(
                             'English',
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                         Padding(
@@ -141,7 +142,6 @@ class _AboutScreenState extends State<LanguagesScreen> {
                           ),
                         ),
                       ]),
-                      
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Divider(
@@ -187,7 +187,8 @@ class _AboutScreenState extends State<LanguagesScreen> {
                           child: Text(
                             'US Dollar',
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
+                              fontSize: 24,
+                            ),
                           ),
                         ),
                         Padding(
@@ -222,7 +223,7 @@ class _AboutScreenState extends State<LanguagesScreen> {
         context: context,
         builder: (context) => AlertDialog(
               title: const Center(child: Text('Language')),
-              titlePadding: const EdgeInsets.only(bottom: 10,top: 10),
+              titlePadding: const EdgeInsets.only(bottom: 10, top: 10),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14)),
               contentPadding: const EdgeInsets.only(top: 5),
@@ -230,8 +231,7 @@ class _AboutScreenState extends State<LanguagesScreen> {
               titleTextStyle: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black.withOpacity(0.7)
-              ),
+                  color: Colors.black.withOpacity(0.7)),
               content: SizedBox(
                 height: 160,
                 child: Column(
@@ -245,52 +245,11 @@ class _AboutScreenState extends State<LanguagesScreen> {
                     const SizedBox(
                       height: 10,
                     ),
-                    const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 5),
-                            child: Text(
-                              'ភាសាខ្មែរ',
-                              style: TextStyle(
-                                  fontSize: 20,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 10),
-                            child: Icon(
-                              Icons.check,
-                              size: 30,
-                              color: Color.fromARGB(255, 211, 208, 208),
-                            ),
-                          ),
-                        ]),
+                    builItemlanguage(0, 'ភាសាខ្មែរ'),
                     const SizedBox(
                       height: 10,
                     ),
-                    const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 5),
-                            child: Text(
-                              'English',
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 10),
-                            child: Icon(
-                              Icons.check,
-                              size: 30,
-                              color: Color.fromARGB(255, 211, 208, 208),
-                            ),
-                          ),
-                        ]),
+                    builItemlanguage(1, 'English'),
                     const SizedBox(
                       height: 10,
                     ),
@@ -300,9 +259,7 @@ class _AboutScreenState extends State<LanguagesScreen> {
                       decoration: const BoxDecoration(
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(14),
-                              bottomRight: Radius.circular(14)
-                        )
-                      ),
+                              bottomRight: Radius.circular(14))),
                       child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -326,7 +283,9 @@ class _AboutScreenState extends State<LanguagesScreen> {
                                         'Cancel',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                            fontSize: 18, color: Colors.blue),
+                                            fontSize: 18,
+                                            color: Color.fromARGB(
+                                                255, 89, 108, 129)),
                                       ),
                                     ),
                                   ),
@@ -349,7 +308,8 @@ class _AboutScreenState extends State<LanguagesScreen> {
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.blue),
+                                          color: Color.fromARGB(
+                                              255, 89, 108, 129)),
                                     ),
                                   ),
                                 ))
@@ -361,12 +321,48 @@ class _AboutScreenState extends State<LanguagesScreen> {
             ));
   }
 
+  int selectItem =0;
+  builItemlanguage(int id, String language) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          selectItem = id;
+        });
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+          child: Text(
+            language,
+            style: TextStyle(
+                fontSize: 20,
+                color: selectItem == id
+                    ? const Color.fromARGB(255, 89, 108, 129)
+                    : Colors.black),
+          ),
+        ),
+        Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: selectItem == id
+            ? Icon(Icons.check,
+                size: 30,
+                color: selectItem == id
+                    ? const Color.fromARGB(255, 89, 108, 129)
+                    : Colors.white
+                )
+            : const SizedBox()
+            ),
+      ]),
+    );
+  }
+
   Future opentCurrencyDialog() {
     return showDialog(
         context: context,
         builder: (context) => AlertDialog(
               title: const Center(child: Text('Currency')),
-              titlePadding: const EdgeInsets.only(bottom: 10,top: 10),
+              titlePadding: const EdgeInsets.only(bottom: 10, top: 10),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14)),
               contentPadding: const EdgeInsets.only(top: 5),
@@ -396,9 +392,7 @@ class _AboutScreenState extends State<LanguagesScreen> {
                                 horizontal: 15, vertical: 5),
                             child: Text(
                               'US Dollar',
-                              style: TextStyle(
-                                  fontSize: 20
-                              ),
+                              style: TextStyle(fontSize: 20),
                             ),
                           ),
                           Padding(
@@ -422,7 +416,7 @@ class _AboutScreenState extends State<LanguagesScreen> {
                             child: Text(
                               'Khmer',
                               style: TextStyle(
-                                  fontSize: 20,
+                                fontSize: 20,
                               ),
                             ),
                           ),
