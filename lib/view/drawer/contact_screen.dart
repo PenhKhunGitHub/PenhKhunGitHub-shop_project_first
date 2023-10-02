@@ -269,6 +269,7 @@ class _AboutScreenState extends State<ContactScreen> {
                         enabledBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white)),
                         labelText: 'Enter your enquiry',
+                        alignLabelWithHint: true,
                         //label: Text('asdfs'),
                         labelStyle:
                             TextStyle(fontSize: 18, color: Colors.black),

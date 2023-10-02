@@ -211,45 +211,84 @@ class _SearchScreenState extends State<SearchScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                  InkWell(
-                    onTap: () {
-                      
-                    },
-                    child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    Padding(
-                      padding:EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                      child: Text(
-                      'Category',
-                      style: TextStyle(
-                          fontSize: 24,
+                InkWell(
+                  onTap: () {
+                    showCupertinoModalPopup(
+                        context: context,
+                        builder: (context) => CupertinoActionSheet(
+                              actions: [
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('All'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Siang Pure Euw Balm'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Twin Lotus Toothpaste'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Carabao Energy Drink'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Ichitan Green Tea'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Kim Hout Birth Nest'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Sea Crown Fish'),
+                                ),
+                              ],
+                              cancelButton: CupertinoActionSheetAction(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: const Text('Cancel')),
+                            )
+                        );
+                  },
+                  child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
+                          child: Text(
+                            'Category',
+                            style: TextStyle(
+                              fontSize: 24,
+                            ),
                           ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 10),
-                      child: Icon(
-                        Icons.arrow_drop_down,
-                        size: 30,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(
+                            Icons.arrow_drop_down,
+                            size: 30,
                             color: Color.fromARGB(255, 211, 208, 208),
                           ),
                         ),
-                      ]
-                    ),
-                  ),
-                  Divider(
-                    color: Colors.grey,
-                    height: 2,
-                    thickness: 1,
-                    indent: 15,
-                  ),
+                      ]),
+                ),
+                const Divider(
+                  color: Colors.grey,
+                  height: 2,
+                  thickness: 1,
+                  indent: 15,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(0.0),
                   child: RadioListTile(
-                    value:2, 
-                    groupValue: 2, 
-                    onChanged: (value){},
+                    value: 2,
+                    groupValue: 2,
+                    onChanged: (value) {},
                     contentPadding: const EdgeInsets.only(left: 3),
                     title: const Text(
                       'Automotically search sub categories',
@@ -257,51 +296,97 @@ class _SearchScreenState extends State<SearchScreen> {
                     ),
                   ),
                 ),
-                Divider(
+                const Divider(
                   color: Colors.grey,
                   height: 2,
                   thickness: 1,
                   indent: 60,
                 ),
                 InkWell(
-                    onTap: () {
-                      
-                    },
-                    child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                    Padding(
-                      padding:EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                      child: Text(
-                      'Brand',
-                      style: TextStyle(
-                          fontSize: 24,
+                  onTap: () {
+                    showCupertinoModalPopup(
+                        context: context,
+                        builder: (context) => CupertinoActionSheet(
+                              actions: [
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('All'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Text('PATAVA FOOD INDUSTRIES'),
+                                      Text('(VIETNAM) LIMITED'),
+                                    ],
+                                  ),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Siang Pure Euw Balm and Oil'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Carabao Tawandang co.ltd'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Ichitan group public co Ltd'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('Kim Hout'),
+                                ),
+                                CupertinoActionSheetAction(
+                                  onPressed: () {},
+                                  child: const Text('A&H International Co Ltd'),
+                                ),
+                              ],
+                              cancelButton: CupertinoActionSheetAction(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: const Text('Cancel')
+                              ),
+                            )
+                        );
+                  },
+                  child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 10),
+                          child: Text(
+                            'Brand',
+                            style: TextStyle(
+                              fontSize: 24,
+                            ),
                           ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 10),
-                      child: Icon(
-                        Icons.arrow_drop_down,
-                        size: 30,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(
+                            Icons.arrow_drop_down,
+                            size: 30,
                             color: Color.fromARGB(255, 211, 208, 208),
                           ),
                         ),
-                      ]
-                    ),
-                  ),
-                  Divider(
-                    color: Colors.grey,
-                    height: 2,
-                    thickness: 1,
-                    indent: 15,
-                  ),
+                      ]),
+                ),
+                const Divider(
+                  color: Colors.grey,
+                  height: 2,
+                  thickness: 1,
+                  indent: 15,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(0.0),
                   child: RadioListTile(
-                    value:2, 
-                    groupValue: 2, 
-                    onChanged: (value){},
+                    value: 2,
+                    groupValue: 2,
+                    onChanged: (value) {},
                     contentPadding: const EdgeInsets.only(left: 3),
                     title: const Text(
                       'Search In product decriptions',
@@ -309,11 +394,11 @@ class _SearchScreenState extends State<SearchScreen> {
                     ),
                   ),
                 ),
-                Divider(
-                    color: Colors.grey,
-                    height: 2,
-                    thickness: 1,
-                    indent: 60,
+                const Divider(
+                  color: Colors.grey,
+                  height: 2,
+                  thickness: 1,
+                  indent: 60,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -321,15 +406,17 @@ class _SearchScreenState extends State<SearchScreen> {
                     height: 40,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 160, 202, 161),
-                      borderRadius: BorderRadius.circular(40)
-                    ),
-                    child: Row(
+                        color: const Color.fromARGB(255, 160, 202, 161),
+                        borderRadius: BorderRadius.circular(40)),
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'SEARCH',
-                          style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.white),
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
                         )
                       ],
                     ),
