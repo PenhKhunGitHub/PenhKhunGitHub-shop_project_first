@@ -88,6 +88,7 @@ class _BodyDrawerState extends State<BodyDrawer> {
                     size: 25,
                   )
               ),
+              
               Expanded(
                 flex: 4,
                 child: Row(

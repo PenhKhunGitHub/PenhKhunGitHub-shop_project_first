@@ -352,6 +352,7 @@ class _SearchScreenState extends State<SearchScreen> {
                             )
                         );
                   },
+                  
                   child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

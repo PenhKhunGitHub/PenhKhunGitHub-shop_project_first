@@ -275,6 +275,7 @@ class _AboutScreenState extends State<ContactScreen> {
                             TextStyle(fontSize: 18, color: Colors.black),
                       ),
                     ),
+                    
                     const Positioned(
                       left: 0,
                       right: 0,

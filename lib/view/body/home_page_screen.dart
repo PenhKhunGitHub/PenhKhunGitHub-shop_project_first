@@ -29,6 +29,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
           ),
         ),
       ),
+      
       appBar: AppBar(
         //Backgound App Bar
         backgroundColor: const Color.fromARGB(255, 160, 202, 161),

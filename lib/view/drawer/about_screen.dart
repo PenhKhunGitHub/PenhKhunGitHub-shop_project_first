@@ -274,6 +274,7 @@ class _AboutScreenState extends State<AboutScreen> {
                       ),
                     ),
                   ),
+                  
                   Padding(
                     padding: EdgeInsets.only(top: 5, bottom: 15),
                     child: Text(

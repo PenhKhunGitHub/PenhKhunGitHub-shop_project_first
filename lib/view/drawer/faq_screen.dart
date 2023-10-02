@@ -105,4 +105,5 @@ class _AboutScreenState extends State<FAQScreen> {
       ),
     );
   }
+  
 }

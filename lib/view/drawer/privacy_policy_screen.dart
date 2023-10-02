@@ -93,7 +93,8 @@ class _AboutScreenState extends State<PrivacyPolicyScreen> {
                   Icons.shopping_cart,
                   size: 30,
                   color: Colors.white,
-                )),
+                )
+              ),
           ),
         ],
       ),

@@ -65,6 +65,7 @@ class FeatureProductState extends State<FeaturedProduct> {
                                     ),
                                   ],
                                 ),
+                                
                                 child: Column(
                                   children: [
                                     Padding(

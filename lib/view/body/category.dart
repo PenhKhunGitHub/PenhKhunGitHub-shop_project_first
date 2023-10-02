@@ -15,6 +15,7 @@ class CategoriesState extends State<Categories> {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWM1CPSM3AIyX062xb9i4zOz31T49nCI4yGA&usqp=CAU",
   ];
+  
   @override
   Widget build(BuildContext context) {
     return Padding(

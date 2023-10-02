@@ -193,6 +193,7 @@ class _CategoryDetailState extends State<CategoryDetail> {
           ),
         ),
       ),
+      
       body: Scrollbar(
         child: SingleChildScrollView(
           child: Column(

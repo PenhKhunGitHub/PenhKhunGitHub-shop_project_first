@@ -79,6 +79,7 @@ class _AboutScreenState extends State<VendorScreen> {
                   MaterialPageRoute(builder: (context)=>const ShoppingCartScreen())
                 );
               },
+              
               child: badges.Badge(
                   position: badges.BadgePosition.topEnd(
                     top: -10,

@@ -190,6 +190,7 @@ class _BrandDetailState extends State<BrandDetail> {
           ),
         ),
       ),
+      
       body: Scrollbar(
         child: GridView.count(
             crossAxisCount: 2,

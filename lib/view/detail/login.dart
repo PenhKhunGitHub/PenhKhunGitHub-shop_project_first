@@ -57,6 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       image: NetworkImage(
                           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQISz5V5d0HIvveamz-uKISjtVg60EriRq05xE34m2cLg&s'))),
             ),
+            
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
               child: Container(

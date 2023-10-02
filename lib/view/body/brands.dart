@@ -32,6 +32,7 @@ class BrandsState extends State<Brands> {
               ],
             ),
           ),
+          
           Padding(
             padding: const EdgeInsets.only(right: 3, top: 10),
             child: SizedBox(

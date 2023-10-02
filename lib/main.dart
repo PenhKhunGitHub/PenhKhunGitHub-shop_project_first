@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shop_project/view/detail/bottom_navigation_bar.dart';
-import 'package:shop_project/view/detail/search_screen.dart';
-import 'package:shop_project/view/drawer/about_screen.dart';
-import 'package:shop_project/view/drawer/contact_screen.dart';
-import 'package:shop_project/view/drawer/language_screen.dart';
 
 
 void main() {
@@ -23,9 +19,9 @@ class MyApp extends StatelessWidget {
       ),
       
       debugShowCheckedModeBanner: false,
-      home: const LanguagesScreen()
+      home: const BottomBar()
     );
-    
+
   }
 }
 
