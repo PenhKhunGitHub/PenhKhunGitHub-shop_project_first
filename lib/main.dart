@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_project/view/detail/bottom_navigation_bar.dart';
+import 'package:shop_project/view/drawer/language_screen.dart';
 
 
 void main() {

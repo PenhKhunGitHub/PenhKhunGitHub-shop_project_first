@@ -45,7 +45,6 @@ class _SliableScreenState extends State<SliableScreen> {
           },
         ),
       ),
-      
       Positioned(
         left: 0,
         right: 0,

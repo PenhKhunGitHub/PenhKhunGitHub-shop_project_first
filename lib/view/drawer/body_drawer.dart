@@ -70,6 +70,7 @@ class _BodyDrawerState extends State<BodyDrawer> {
             )
           );
         }
+        
         setState(() {
           selectItem = id;
         });

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:shop_project/view/detail/shopping_cart.dart';
 
 class PrivacyPolicyScreen extends StatefulWidget {
   const PrivacyPolicyScreen({super.key});
@@ -71,30 +72,35 @@ class _AboutScreenState extends State<PrivacyPolicyScreen> {
           //Badges Shopping Card
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: badges.Badge(
-                position: badges.BadgePosition.topEnd(
-                  top: -10,
-                  end: -8,
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const ShoppingCartScreen()));
+              },
+              child: badges.Badge(
+                  position: badges.BadgePosition.topEnd(
+                    top: -10,
+                    end: -8,
+                  ),
+                  showBadge: true,
+                  ignorePointer: false,
+                  onTap: () {},
+                  badgeContent: const Text(
+                    '1',
+                    style: TextStyle(fontSize: 10, color: Colors.white),
+                  ),
+                  badgeStyle: badges.BadgeStyle(
+                    badgeColor: Colors.blue,
+                    padding: const EdgeInsets.all(5),
+                    borderRadius: BorderRadius.circular(20),
+                    elevation: 0,
+                  ),
+                  child: const Icon(
+                    Icons.shopping_cart,
+                    size: 30,
+                    color: Colors.white,
+                  )
                 ),
-                showBadge: true,
-                ignorePointer: false,
-                onTap: () {},
-                badgeContent: const Text(
-                  '1',
-                  style: TextStyle(fontSize: 10, color: Colors.white),
-                ),
-                badgeStyle: badges.BadgeStyle(
-                  badgeColor: Colors.blue,
-                  padding: const EdgeInsets.all(5),
-                  borderRadius: BorderRadius.circular(20),
-                  elevation: 0,
-                ),
-                child: const Icon(
-                  Icons.shopping_cart,
-                  size: 30,
-                  color: Colors.white,
-                )
-              ),
+            ),
           ),
         ],
       ),

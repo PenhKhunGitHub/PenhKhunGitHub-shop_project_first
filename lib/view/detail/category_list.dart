@@ -36,7 +36,6 @@ class _CategoryListState extends State<CategoryList> {
                   color: Colors.white,
                 ),
               ),
-              
               Text(
                 'Back',
                 style: TextStyle(fontSize: 20, color: Colors.white),

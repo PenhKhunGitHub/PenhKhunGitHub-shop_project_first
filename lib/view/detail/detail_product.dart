@@ -19,8 +19,7 @@ class _DetailProductState extends State<DetailProduct> {
     {'id': 1, 'image_path': 'images/anima.jpg'},
     {'id': 2, 'image_path': 'images/anima1.jpg'},
     {'id': 3, 'image_path': 'images/anima2.jpg'},
-  ];
-  
+  ]; 
   CarouselController carouselController = CarouselController();
   @override
   Widget build(BuildContext context) {

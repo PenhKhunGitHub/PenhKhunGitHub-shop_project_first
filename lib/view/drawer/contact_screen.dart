@@ -104,197 +104,199 @@ class _AboutScreenState extends State<ContactScreen> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: Column(
-                children: [
-                  Stack(children: [
-                    TextFormField(
-                      style: const TextStyle(fontSize: 18),
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        labelText: 'Enter your name',
-                        //label: Text('asdfs'),
-                        labelStyle:
-                            TextStyle(fontSize: 18, color: Colors.black),
-                      ),
-                    ),
-                    const Positioned(
-                      left: 0,
-                      right: 0,
-                      bottom: 5,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 13),
-                        child: Divider(
-                          color: Color.fromARGB(255, 229, 223, 223),
-                          height: 5,
-                          thickness: 1,
-                          //indent: 20,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                child: Column(
+                  children: [
+                    Stack(children: [
+                      TextFormField(
+                        style: const TextStyle(fontSize: 18),
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          labelText: 'Enter your name',
+                          //label: Text('asdfs'),
+                          labelStyle:
+                              TextStyle(fontSize: 18, color: Colors.black),
                         ),
                       ),
-                    )
-                  ]),
-                ],
-              )),
-          Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
+                      const Positioned(
+                        left: 0,
+                        right: 0,
+                        bottom: 5,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 13),
+                          child: Divider(
+                            color: Color.fromARGB(255, 229, 223, 223),
+                            height: 5,
+                            thickness: 1,
+                            //indent: 20,
+                          ),
+                        ),
+                      )
+                    ]),
+                  ],
+                )),
+            Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Column(
+                  children: [
+                    Stack(children: [
+                      TextFormField(
+                        style: const TextStyle(fontSize: 18),
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          labelText: 'Enter your email address',
+                          //label: Text('asdfs'),
+                          labelStyle:
+                              TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                      ),
+                      const Positioned(
+                        left: 0,
+                        right: 0,
+                        bottom: 5,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 13),
+                          child: Divider(
+                            color: Color.fromARGB(255, 229, 223, 223),
+                            height: 5,
+                            thickness: 1,
+                            //indent: 20,
+                          ),
+                        ),
+                      )
+                    ]),
+                  ],
+                )),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                child: Column(
+                  children: [
+                    Stack(children: [
+                      TextFormField(
+                        style: const TextStyle(fontSize: 18),
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          labelText: 'Phone number',
+                          //label: Text('asdfs'),
+                          labelStyle:
+                              TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                      ),
+                      const Positioned(
+                        left: 0,
+                        right: 0,
+                        bottom: 5,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 13),
+                          child: Divider(
+                            color: Color.fromARGB(255, 229, 223, 223),
+                            height: 5,
+                            thickness: 1,
+                            //indent: 20,
+                          ),
+                        ),
+                      )
+                    ]),
+                  ],
+                )),
+            Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Column(
+                  children: [
+                    Stack(children: [
+                      TextFormField(
+                        style: const TextStyle(fontSize: 18),
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          labelText: 'Enter subject',
+                          //label: Text('asdfs'),
+                          labelStyle:
+                              TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                      ),
+                      const Positioned(
+                        left: 0,
+                        right: 0,
+                        bottom: 5,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 13),
+                          child: Divider(
+                            color: Color.fromARGB(255, 229, 223, 223),
+                            height: 5,
+                            thickness: 1,
+                            //indent: 20,
+                          ),
+                        ),
+                      )
+                    ]),
+                  ],
+                )),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                child: Column(
+                  children: [
+                    Stack(children: [
+                      TextFormField(
+                        maxLines: 5,
+                        style: const TextStyle(fontSize: 18),
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white)),
+                          labelText: 'Enter your enquiry',
+                          alignLabelWithHint: true,
+                          //label: Text('asdfs'),
+                          labelStyle:
+                              TextStyle(fontSize: 18, color: Colors.black),
+                        ),
+                      ),
+                      
+                      const Positioned(
+                        left: 0,
+                        right: 0,
+                        bottom: 5,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 13),
+                          child: Divider(
+                            color: Color.fromARGB(255, 229, 223, 223),
+                            height: 5,
+                            thickness: 1,
+                            //indent: 20,
+                          ),
+                        ),
+                      )
+                    ]),
+                  ],
+                )
               ),
-              child: Column(
-                children: [
-                  Stack(children: [
-                    TextFormField(
-                      style: const TextStyle(fontSize: 18),
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        labelText: 'Enter your email address',
-                        //label: Text('asdfs'),
-                        labelStyle:
-                            TextStyle(fontSize: 18, color: Colors.black),
-                      ),
-                    ),
-                    const Positioned(
-                      left: 0,
-                      right: 0,
-                      bottom: 5,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 13),
-                        child: Divider(
-                          color: Color.fromARGB(255, 229, 223, 223),
-                          height: 5,
-                          thickness: 1,
-                          //indent: 20,
-                        ),
-                      ),
-                    )
-                  ]),
-                ],
-              )),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              child: Column(
-                children: [
-                  Stack(children: [
-                    TextFormField(
-                      style: const TextStyle(fontSize: 18),
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        labelText: 'Phone number',
-                        //label: Text('asdfs'),
-                        labelStyle:
-                            TextStyle(fontSize: 18, color: Colors.black),
-                      ),
-                    ),
-                    const Positioned(
-                      left: 0,
-                      right: 0,
-                      bottom: 5,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 13),
-                        child: Divider(
-                          color: Color.fromARGB(255, 229, 223, 223),
-                          height: 5,
-                          thickness: 1,
-                          //indent: 20,
-                        ),
-                      ),
-                    )
-                  ]),
-                ],
-              )),
-          Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-              ),
-              child: Column(
-                children: [
-                  Stack(children: [
-                    TextFormField(
-                      style: const TextStyle(fontSize: 18),
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        labelText: 'Enter subject',
-                        //label: Text('asdfs'),
-                        labelStyle:
-                            TextStyle(fontSize: 18, color: Colors.black),
-                      ),
-                    ),
-                    const Positioned(
-                      left: 0,
-                      right: 0,
-                      bottom: 5,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 13),
-                        child: Divider(
-                          color: Color.fromARGB(255, 229, 223, 223),
-                          height: 5,
-                          thickness: 1,
-                          //indent: 20,
-                        ),
-                      ),
-                    )
-                  ]),
-                ],
-              )),
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-              child: Column(
-                children: [
-                  Stack(children: [
-                    TextFormField(
-                      maxLines: 5,
-                      style: const TextStyle(fontSize: 18),
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
-                        labelText: 'Enter your enquiry',
-                        alignLabelWithHint: true,
-                        //label: Text('asdfs'),
-                        labelStyle:
-                            TextStyle(fontSize: 18, color: Colors.black),
-                      ),
-                    ),
-                    
-                    const Positioned(
-                      left: 0,
-                      right: 0,
-                      bottom: 5,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 13),
-                        child: Divider(
-                          color: Color.fromARGB(255, 229, 223, 223),
-                          height: 5,
-                          thickness: 1,
-                          //indent: 20,
-                        ),
-                      ),
-                    )
-                  ]),
-                ],
-              )
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

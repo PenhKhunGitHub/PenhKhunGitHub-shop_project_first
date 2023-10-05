@@ -11,7 +11,6 @@ class AccountScreen extends StatefulWidget {
   State<AccountScreen> createState() => _BodyDrawerState();
 }
 
-
 class _BodyDrawerState extends State<AccountScreen> {
   @override
   Widget build(BuildContext context) {

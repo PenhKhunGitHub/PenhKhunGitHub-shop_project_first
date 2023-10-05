@@ -402,8 +402,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                 ),
               ],
             ),
-          ),
-          
+          ),    
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Divider(

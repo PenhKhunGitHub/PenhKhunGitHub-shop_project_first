@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:shop_project/view/detail/shopping_cart.dart';
 
 class LanguagesScreen extends StatefulWidget {
   const LanguagesScreen({super.key});
@@ -9,6 +10,7 @@ class LanguagesScreen extends StatefulWidget {
 }
 
 class _AboutScreenState extends State<LanguagesScreen> {
+  bool ischeck = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,29 +73,34 @@ class _AboutScreenState extends State<LanguagesScreen> {
           //Badges Shopping Card
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: badges.Badge(
-                position: badges.BadgePosition.topEnd(
-                  top: -10,
-                  end: -8,
-                ),
-                showBadge: true,
-                ignorePointer: false,
-                onTap: () {},
-                badgeContent: const Text(
-                  '1',
-                  style: TextStyle(fontSize: 10, color: Colors.white),
-                ),
-                badgeStyle: badges.BadgeStyle(
-                  badgeColor: Colors.blue,
-                  padding: const EdgeInsets.all(5),
-                  borderRadius: BorderRadius.circular(20),
-                  elevation: 0,
-                ),
-                child: const Icon(
-                  Icons.shopping_cart,
-                  size: 30,
-                  color: Colors.white,
-                )),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const ShoppingCartScreen()));
+              },
+              child: badges.Badge(
+                  position: badges.BadgePosition.topEnd(
+                    top: -10,
+                    end: -8,
+                  ),
+                  showBadge: true,
+                  ignorePointer: false,
+                  onTap: () {},
+                  badgeContent: const Text(
+                    '1',
+                    style: TextStyle(fontSize: 10, color: Colors.white),
+                  ),
+                  badgeStyle: badges.BadgeStyle(
+                    badgeColor: Colors.blue,
+                    padding: const EdgeInsets.all(5),
+                    borderRadius: BorderRadius.circular(20),
+                    elevation: 0,
+                  ),
+                  child: const Icon(
+                    Icons.shopping_cart,
+                    size: 30,
+                    color: Colors.white,
+                  )),
+            ),
           ),
         ],
       ),
@@ -221,7 +228,9 @@ class _AboutScreenState extends State<LanguagesScreen> {
   Future opentLanguageDialog() {
     return showDialog(
         context: context,
-        builder: (context) => AlertDialog(
+        builder: (context) {
+          return StatefulBuilder(builder: (context, setState) {
+            return AlertDialog(
               title: const Center(child: Text('Language')),
               titlePadding: const EdgeInsets.only(bottom: 10, top: 10),
               shape: RoundedRectangleBorder(
@@ -245,11 +254,47 @@ class _AboutScreenState extends State<LanguagesScreen> {
                     const SizedBox(
                       height: 10,
                     ),
-                    builItemlanguage(0, 'ភាសាខ្មែរ'),
+                    const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 5),
+                            child: Text(
+                              'Khmer',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.black),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Icon(Icons.check,
+                                size: 30,
+                                color: Color.fromARGB(255, 89, 108, 129)),
+                          )
+                        ]),
                     const SizedBox(
                       height: 10,
                     ),
-                    builItemlanguage(1, 'English'),
+                    const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 5),
+                            child: Text(
+                              'English',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.black),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Icon(Icons.check,
+                                size: 30,
+                                color: Color.fromARGB(255, 89, 108, 129)),
+                          )
+                        ]),
                     const SizedBox(
                       height: 10,
                     ),
@@ -318,43 +363,9 @@ class _AboutScreenState extends State<LanguagesScreen> {
                   ],
                 ),
               ),
-            ));
-  }
-
-  int selectItem =0;
-  builItemlanguage(int id, String language) {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          selectItem = id;
+            );
+          });
         });
-      },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-          child: Text(
-            language,
-            style: TextStyle(
-                fontSize: 20,
-                color: selectItem == id
-                    ? const Color.fromARGB(255, 89, 108, 129)
-                    : Colors.black),
-          ),
-        ),
-        Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: selectItem == id
-            ? Icon(Icons.check,
-                size: 30,
-                color: selectItem == id
-                    ? const Color.fromARGB(255, 89, 108, 129)
-                    : Colors.white
-                )
-            : const SizedBox()
-            ),
-      ]),
-    );
   }
 
   Future opentCurrencyDialog() {

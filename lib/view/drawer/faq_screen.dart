@@ -99,6 +99,7 @@ class _AboutScreenState extends State<FAQScreen> {
                   size: 30,
                   color: Colors.white,
                 )
+                
             ),
           ),
         ],
