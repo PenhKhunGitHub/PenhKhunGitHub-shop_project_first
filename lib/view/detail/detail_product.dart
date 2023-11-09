@@ -4,14 +4,14 @@ import 'package:badges/badges.dart' as badges;
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:shop_project/view/detail/shopping_cart.dart';
 
-class DetailProduct extends StatefulWidget {
-  const DetailProduct({super.key});
+class ProductDetail extends StatefulWidget {
+  const ProductDetail({super.key});
 
   @override
-  State<DetailProduct> createState() => _DetailProductState();
+  State<ProductDetail> createState() => _DetailProductState();
 }
 
-class _DetailProductState extends State<DetailProduct> {
+class _DetailProductState extends State<ProductDetail> {
   TextEditingController numberTextController = TextEditingController();
   int count = 1;
   int currentIndex = 1;
@@ -561,8 +561,8 @@ class _DetailProductState extends State<DetailProduct> {
             ],
           ),
         ),
-        bottomNavigationBar: SizedBox(
-          height: 174,
+        bottomSheet: SizedBox(
+          height: 99,
           width: double.infinity,
           child: Column(
             children: [
@@ -667,61 +667,6 @@ class _DetailProductState extends State<DetailProduct> {
                       ),
                     ],
                   ),
-                ),
-              ),
-              Container(
-                height: 75,
-                width: double.infinity,
-                color: Colors.blue,
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 25, bottom: 25),
-                          child: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.home,
-                                size: 30,
-                                color: Colors.white,
-                              )),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, bottom: 25),
-                          child: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.menu,
-                                size: 30,
-                                color: Colors.white,
-                              )),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, bottom: 25),
-                          child: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.adf_scanner_rounded,
-                                size: 30,
-                                color: Colors.white,
-                              )),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 10, bottom: 25, right: 30),
-                          child: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.person,
-                                size: 30,
-                                color: Colors.white,
-                              )),
-                        ),
-                      ],
-                    ),
-                  ],
                 ),
               ),
             ],

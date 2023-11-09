@@ -102,7 +102,7 @@ class _ScanbarCodeScreenState extends State<ScanbarCodeScreen> {
               Container(
                 height: 815,
                 width: double.infinity,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(

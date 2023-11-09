@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shop_project/view/drawer/about_screen.dart';
-import 'package:shop_project/view/drawer/contact_screen.dart';
-import 'package:shop_project/view/drawer/faq_screen.dart';
-import 'package:shop_project/view/drawer/language_screen.dart';
-import 'package:shop_project/view/drawer/privacy_policy_screen.dart';
-import 'package:shop_project/view/drawer/vendor_screen.dart';
+import 'package:shop_project/view/drawer/page_drawer/about_screen.dart';
+import 'package:shop_project/view/drawer/page_drawer/contact_screen.dart';
+import 'package:shop_project/view/drawer/page_drawer/faq_screen.dart';
+import 'package:shop_project/view/drawer/page_drawer/language_screen.dart';
+import 'package:shop_project/view/drawer/page_drawer/privacy_policy_screen.dart';
+import 'package:shop_project/view/drawer/page_drawer/vendor_screen.dart';
 class BodyDrawer extends StatefulWidget {
   const BodyDrawer({super.key});
 

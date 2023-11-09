@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shop_project/view/body/home_page_screen.dart';
-import 'package:shop_project/view/detail/account_screen.dart';
-import 'package:shop_project/view/detail/category_list.dart';
-import 'package:shop_project/view/detail/scan_barcode.dart';
+import 'package:shop_project/view/home/home_page_screen.dart';
+import 'package:shop_project/view/account/account_screen.dart';
+import 'package:shop_project/view/bottom_navigationbar/category_list.dart';
+import 'package:shop_project/view/bottom_navigationbar/scan_barcode.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -20,13 +20,17 @@ class _BottomBarState extends State<BottomBar> {
     });
   }
 
-  final List<Widget> pages = [const HomePageScreen(),const CategoryList() ,const ScanbarCodeScreen(),const AccountScreen()];
-  final PageStorageBucket bucket = PageStorageBucket();
+  final List<Widget> pages = [
+    const HomePageScreen(),
+    const CategoryList() ,
+    const ScanbarCodeScreen(),
+    const AccountScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageStorage(bucket: bucket, child: pages[selectItem]),
-        bottomNavigationBar: BottomNavigationBar(
+      body: pages[selectItem],
+      bottomNavigationBar: BottomNavigationBar(
           mouseCursor: MouseCursor.defer,
           onTap: navigationBotoomBar,
           currentIndex: selectItem,

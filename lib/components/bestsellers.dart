@@ -39,7 +39,7 @@ class BestSellersState extends State<BestSellers> {
               child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const DetailProduct()));
+                      builder: (context) => const ProductDetail()));
                 },
                 child: SizedBox(
                     height: 260,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 import 'package:shop_project/view/detail/shopping_cart.dart';
-import 'package:shop_project/view/drawer/contact_screen.dart';
+import 'package:shop_project/view/drawer/page_drawer/contact_screen.dart';
 
 class VendorScreen extends StatefulWidget {
   const VendorScreen({super.key});

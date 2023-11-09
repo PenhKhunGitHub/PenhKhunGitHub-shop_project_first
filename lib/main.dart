@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_project/view/detail/bottom_navigation_bar.dart';
-import 'package:shop_project/view/drawer/language_screen.dart';
+import 'package:shop_project/router/app_router.dart';
+import 'package:shop_project/view/bottom_navigationbar/bottom_navigation_bar.dart';
 
 
 void main() {
@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
       ),
       
       debugShowCheckedModeBanner: false,
-      home: const BottomBar()
+      routes: appRouter,
+      // home: const BottomBar()
     );
 
   }

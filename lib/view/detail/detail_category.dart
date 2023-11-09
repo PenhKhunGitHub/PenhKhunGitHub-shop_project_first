@@ -221,7 +221,7 @@ class _CategoryDetailState extends State<CategoryDetail> {
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
-                                context, MaterialPageRoute(builder: (context)=>const DetailProduct())
+                                context, MaterialPageRoute(builder: (context)=>const ProductDetail())
                             );
                           },
                           child: Container(

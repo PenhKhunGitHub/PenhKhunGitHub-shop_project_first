@@ -310,6 +310,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   Stack(children: [
                     TextFormField(
                       style: const TextStyle(fontSize: 18),
+                      keyboardType: TextInputType.number,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         focusedBorder: OutlineInputBorder(
@@ -424,12 +425,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: const Text('Cancal')),
+                        child: const Text('Cancal',style: TextStyle(fontSize: 16),)),
                     TextButton(
                         onPressed: () {
                           Navigator.of(context).pop(tempPickDate);
                         },
-                        child: const Text('Done'))
+                        child: const Text('Done',style: TextStyle(fontSize: 16)))
                   ],
                 ),
                 Expanded(
@@ -448,7 +449,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           );
         });
-    if (pickedDate != null && pickedDate != selectedDate) {
+    if (pickedDate != selectedDate) {
       setState(() {
         selectedDate == pickedDate;
         dateController.text = pickedDate.toString();

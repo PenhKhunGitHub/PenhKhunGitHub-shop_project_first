@@ -47,7 +47,7 @@ class FeatureProductState extends State<FeaturedProduct> {
                             child: GestureDetector(
                               onTap: () {
                                 Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (context)=> const DetailProduct())
+                                  MaterialPageRoute(builder: (context)=> const ProductDetail())
                                 );
                               },
                               child: Container(

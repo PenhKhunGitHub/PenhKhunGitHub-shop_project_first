@@ -34,6 +34,7 @@ class CategoriesState extends State<Categories> {
             child: Scrollbar(
               child: SizedBox(
                   height: 220,
+                  width: double.infinity,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: list.length,

@@ -203,7 +203,7 @@ class _BrandDetailState extends State<BrandDetail> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const DetailProduct()
+                            builder: (context) => const ProductDetail()
                         )
                     );
                   },
